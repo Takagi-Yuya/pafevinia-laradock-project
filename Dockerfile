@@ -2,10 +2,11 @@ FROM ubuntu:12.04
 
 # Install dependencies
 RUN apt-get update -y
-RUN apt-get install -y apache2
+RUN apt-get install -y git curl apache2 php5 libapache2-mod-php5 php5-mcrypt php5-mysql
 
-# Install apache and write hello world message
-RUN echo "Hello World!" > /var/www/index.html
+# Install app
+RUN rm -rf /var/www/*
+ADD src /var/www
 
 # Configure apache
 RUN a2enmod rewrite
