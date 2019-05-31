@@ -15,6 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -43,12 +44,18 @@
 </head>
 <body>
     <div id="toppage">
-      <div class="row text-center">
-        <div class="col-md-12">
-          <h1 class="title">pafevinia🦒</h1>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="title">pafevinia🦒</h1>
+            </div>
         </div>
-      </div>
     </div>
+    <div align="center" >
+        <a href="{{ url('/') }}">
+        <i class="fas fa-home"></i> HOME
+        </a>
+    </div>
+    <hr>
     <div id="app">
         <main class="py-4">
             @yield('content')

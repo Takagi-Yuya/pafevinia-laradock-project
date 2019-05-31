@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h4>● What's about "pafevinia"？</h4>
+                    <h4><i class="fas fa-certificate"></i> What's about "pafevinia"？</h4>
                 </div>
                 <div class="card-body">
                     僕達はpafeviniaです。
@@ -18,9 +18,9 @@
                     このサイトはpafeviniaの仲間たちが共同でオールジャンルのブログを運営していきます。
                 </div>
             </div>
-            <div class="card mt-3">
+            <div class="card mt-3 mb-3">
                 <div class="card-header">
-                    <h4>● pafevinia NEWS</h4>
+                    <h4><i class="fas fa-bullhorn"></i> pafevinia NEWS</h4>
                 </div>
                 <div class="card-body">
                     2019/5/31 ブログ制作中...
