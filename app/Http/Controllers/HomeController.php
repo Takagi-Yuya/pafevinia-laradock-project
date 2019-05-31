@@ -11,9 +11,10 @@ class HomeController extends Controller
      *
      * @return void
      */
+    //ログイン不要で見られる 
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
