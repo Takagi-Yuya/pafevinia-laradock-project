@@ -18,8 +18,37 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+        #toppage {
+            background-image: url('images/wakuwaku.jpg');
+            position: relative;
+            z-index: 0;
+            margin: 15px auto;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 50%;
+            height: 450px;
+            max-width: 650px; /* 最大幅 */
+            min-width: 400px; /* 最小幅 */
+        }
+        .title {
+            font-size: 70px;
+            color: #e9ecef;
+            text-shadow: 5px 5px 5px #808080;
+            margin-bottom: 20px;
+        }
+    </style>
+
 </head>
 <body>
+    <div id="toppage">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="title">pafevinia🦒</h1>
+        </div>
+      </div>
+    </div>
     <div id="app">
         <main class="py-4">
             @yield('content')
