@@ -29,7 +29,7 @@
                     <hr size="3" color="gray">
                     <p>名前：{{ $user->name }}</p>
                     <hr size="3" color="gray">
-                    <p>※詳細プロフィールの設定はまだありません。</p>
+                    <p>※詳細プロフィールの設定がまだありません。</p>
                     <hr size="3" color="gray">
                 </div>
                 <div class="col-md-8 mx-auto text-right">
