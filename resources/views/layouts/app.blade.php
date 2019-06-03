@@ -39,6 +39,9 @@
             text-shadow: 5px 5px 5px #808080;
             margin-bottom: 20px;
         }
+        .card-height {
+            height: 95%;
+        }
     </style>
 
 </head>
@@ -63,6 +66,11 @@
     </div>
 </body>
 <footer>
+    <div align="center" >
+        <a href="{{ url('/') }}">
+        <i class="fas fa-home"></i> HOME
+        </a>
+    </div>
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <div class="pt-3 pl-5">
