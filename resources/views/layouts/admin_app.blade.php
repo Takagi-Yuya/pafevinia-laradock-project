@@ -34,7 +34,6 @@
              object-fit: cover;
           border-radius: 50%;
         }
-
         .image-profile {
           -o-object-fit: cover;
              object-fit: cover;
@@ -43,6 +42,17 @@
           max-width: 100%;
           display: block;
           text-align: center;
+        }
+        .box{
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #5d627b;
+            background: white;
+            border-top: solid 2px #1E575A;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        }
+        .ws-nr{
+            white-space: nowrap;
         }
     </style>
 

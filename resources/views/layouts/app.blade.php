@@ -59,6 +59,9 @@
           display: block;
           text-align: center;
         }
+        .ws-nr{
+            white-space: nowrap;
+        }
     </style>
 
 </head>

@@ -6,21 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-  protected $primaryKey = 'user_id';
+    protected $guarded = array('id');
 
-  protected $guarded = ['user_id'];
+    protected $fillable = [
+        'content'
+    ];
 
-  public static $rules = array(
-    'content' => 'required'
-  );
+    public static $rules = array(
+        'content' => 'required'
+    );
 
-  Public function user()
-  {
-      return $this->belongsTo('App\User');
-  }
+    Public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
-  Public function profile()
-  {
-      return $this->belongsTo('App\Profile');
-  }
+    Public function profile()
+    {
+        return $this->belongsTo('App\Profile');
+    }
 }

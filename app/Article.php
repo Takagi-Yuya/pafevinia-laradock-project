@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    protected $primaryKey = 'user_id';
+    protected $guarded = array('id');
 
-    protected $guarded = ['user_id'];
+    protected $fillable = [
+        'title', 'content', 'image_path',
+    ];
 
     public static $rules = array(
       'title' => 'required',
