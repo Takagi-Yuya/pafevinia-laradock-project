@@ -48,26 +48,22 @@
 
 </head>
 <body>
-    <div id="toppage">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h1 class="title">pafevinia🦒(admin)</h1>
+    <div class="bg-white shadow-sm">
+        <div id="toppage">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1 class="title">pafevinia🦒(admin)</h1>
+                </div>
             </div>
         </div>
+        <div align="center">
+            <a href="{{ url('/') }}"><i class="fas fa-home"></i> GuestHome</a>
+            <br>
+            <a href="{{ url('/admin/admin_home') }}"><i class="fas fa-home"></i> AdminHome</a>
+        </div>
     </div>
-    <div align="center">
-        <a href="{{ url('/') }}">
-        <i class="fas fa-home"></i> GuestHome
-        </a>
-    </div>
-    <div align="center">
-        <a href="{{ url('/admin/admin_home') }}">
-        <i class="fas fa-home"></i> AdminHome
-        </a>
-    </div>
-    <hr>
     <div id="app">
-        <main class="py-4">
+        <main class="py-4 mt-3">
             @yield('content')
         </main>
     </div>

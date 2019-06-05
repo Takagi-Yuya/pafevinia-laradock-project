@@ -38,9 +38,10 @@ class ProfileController extends Controller
         return redirect('admin/admin_home');
     }
 
-    public function edit(Request $request)
+    public function edit()
     {
-        $profile = Profile::find($request->user_id);
+        $user = Auth::user();
+        $profile = Profile::find($user->id);
 
         return view('admin.profile.edit', ['profile_form' => $profile]);
     }

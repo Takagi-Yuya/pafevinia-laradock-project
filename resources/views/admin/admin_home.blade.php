@@ -20,6 +20,9 @@
                     <p>introduction：{{ $user->profile->introduction }}</p>
                     <hr size="3" color="gray">
                 </div>
+                <div class="col-md-8 mx-auto text-right">
+                    <a href="{{ action('Admin\ProfileController@edit', ['user_id' => $user->id]) }}" role='button' class='btn btn-success'>編集・更新</a>
+                </div>
             @else
                 <div class="image col-md-8 mx-auto">
                     <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-profile mx-auto">
