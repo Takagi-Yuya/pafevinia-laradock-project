@@ -4,14 +4,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 mx-auto">
-            <h2>pafevinia NEWS / edit</h2>
+            <h2>article / edit</h2>
             <br>
             <form action="{{ action("Admin\NewsController@update") }}" method="post" enctype="multipart/form-data">
                 @include('partials.errors.form_errors')
                 <div class="form-group row">
                     <label class="col-md-2 ws-nr" for="content"><span class="badge badge-danger">Required</span> content：</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="text" name="content" value="{{ $news_form->content }}">
+                        <input class="form-control" type="text" name="content" rows="2" value="{{ $news_form->content }}">
                     </div>
                 </div>
                 <div class="form-group row">

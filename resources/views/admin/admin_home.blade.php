@@ -6,7 +6,7 @@
         <div class="col-md-10">
 
             <!-- profile -->
-            <u class="h1"> profile </u>
+            <u class="h1"> -profile- </u>
             @if ($user->profile != null)
                 <div class="image col-md-8 mx-auto">
                     @if ($user->profile->image_path != null)
@@ -45,7 +45,7 @@
 
             <!-- news -->
             <hr>
-            <u class="h1"> pafevinia NEWS </u>
+            <u class="h1"> -pafevinia NEWS- </u>
             @if (!empty($news))
                 @foreach ($news as $news_part)
                     <div class="col-md-10 mx-auto box">
@@ -71,6 +71,7 @@
 
             <!-- article -->
             <hr>
+            <u class="h1"> -article- </u>
         </div>
     </div>
 </div>
