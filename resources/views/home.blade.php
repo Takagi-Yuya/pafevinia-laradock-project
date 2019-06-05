@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row mb-5 justify-content-center">
         <div class="col-md-8">
-            <div class="card m-2">
+            <div class="card m-2 shadow-sm">
                 <div class="card-header">
                     <h4><i class="fas fa-bullhorn"></i> pafevinia NEWS</h4>
                 </div>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card m-2">
+            <div class="card m-2 shadow-sm">
                 <div class="card-header">
                     <h4><i class="fas fa-certificate"></i> What's about "pafevinia"？</h4>
                 </div>
@@ -42,69 +42,69 @@
         <div class="col-lg-8">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="card m-1 card-height">
+                    <div class="card m-1 card-height shadow-sm">
                         <img class="card-img-top" src="images/sunset.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Card title</h4>
                             <p class="card-text">test</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">read more</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card m-1 card-height">
+                    <div class="card m-1 card-height shadow-sm">
                         <img class="card-img-top" src="images/wakuwaku.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Card title</h4>
                             <p class="card-text">test</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">read more</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card m-1 card-height">
+                    <div class="card m-1 card-height shadow-sm">
                     <img class="card-img-top" src="images/hollywood.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Card titleCard titleCard titleCard titleCard titleCard title</h4>
                             <p class="card-text">testtesttesttesttesttesttesttesttesttesttesttest文字が多いと？？</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">read more</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card m-1 card-height">
+                    <div class="card m-1 card-height shadow-sm">
                         <img class="card-img-top" src="images/hollywood.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Card title</h4>
                             <p class="card-text">test</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">read more</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card m-1 card-height">
+                    <div class="card m-1 card-height shadow-sm">
                         <img class="card-img-top" src="images/wakuwaku.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Card title</h4>
                             <p class="card-text">test</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">read more</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card m-1 card-height">
+                    <div class="card m-1 card-height shadow-sm">
                     <img class="card-img-top" src="images/wakuwaku.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Card titleCard titleCard titleCard titleCard titleCard title</h4>
                             <p class="card-text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest文字が多いと？？</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">read more</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="card m-1">
+            <div class="card m-1 shadow-sm">
                 <div class="card-header">
                     <h4><i class="fas fa-user-astronaut"></i> user list</h4>
                 </div>
