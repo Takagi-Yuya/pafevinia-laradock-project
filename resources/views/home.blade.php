@@ -11,7 +11,7 @@
                 <div class="card-body">
                     @foreach ($news as $news_part)
                         <div class="col-md-10 mx-auto">
-                            <p><small><i class="far fa-clock"></i> {{ $news_part->created_at->format('Y/m/d/D') }} </small><img src="{{ $news_part->user->profile->image_path }}" class="image-mini mx-auto"> {{ $news_part->content }}</p>
+                            <p><small><i class="fas fa-bullhorn"></i> {{ $news_part->created_at->format('Y/m/d/D') }} </small> ー <img src="{{ $news_part->user->profile->image_path }}" class="image-mini mx-auto"> {{ $news_part->content }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -42,7 +42,7 @@
                 @foreach ($articles as $article)
                     <div class="col-md-4 col-sm-6 col-xs-6">
                         <div class="card m-1 card-height shadow-sm">
-                            <span class="badge badge-secondary"><img src="{{ $article->user->profile->image_path }}" class="image-mini mx-auto"> {{ $article->user->profile->name }}</span>
+                            <a href="#" class="badge badge-secondary"><img src="{{ $article->user->profile->image_path }}" class="image-mini mx-auto"> {{ $article->user->profile->name }}</a>
                             @if ($article->image_path)
                                 <img class="card-img-top" src="{{ $article->image_path }}" alt="Card image cap">
                             @endif

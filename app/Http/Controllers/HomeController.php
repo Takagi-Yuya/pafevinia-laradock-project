@@ -34,7 +34,7 @@ class HomeController extends Controller
         $users = User::all();
         $profiles = Profile::all();
         $news = News::orderBy('created_at', 'desc')->paginate(6, ["*"], 'news-pn');//->appends(["articles-pn"=>$request->input('articles-pn')]);
-        $articles = Article::orderBy('created_at', 'desc')->paginate(6, ["*"], 'articles-pn');//->appends(["news-pn"=>$request->input('news-pn')]);
+        $articles = Article::orderBy('created_at', 'desc')->paginate(12, ["*"], 'articles-pn');//->appends(["news-pn"=>$request->input('news-pn')]);
 
         return view('home', ['profiles' => $profiles, 'users' => $users, 'news' => $news, 'articles' => $articles]);
     }
