@@ -4,24 +4,25 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Aticle;
+use App\Article;
 use App\Profile;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Storage;
 
-class AticleController extends Controller
+class ArticleController extends Controller
 {
     public function add()
     {
-        return view('admin.aticle.create');
+        return view('admin.article.create');
     }
 
     public function create(Request $request)
     {
-        $this->validate($request, Aticle::$rules);
-        $aticles = new Aticle;
+        $this->validate($request, Article::$rules);
+        $articles = new Article;
         $user = Auth::user();
-        $aticles->user_id = $user->id;
+        $articles->user_id = $user->id;
         $form = $request->all();
 
         if (isset($form['image'])) {
@@ -34,46 +35,46 @@ class AticleController extends Controller
         unset($form['_token']);
         unset($form['image']);
 
-        $aticles->fill($form)->save();
+        $articles->fill($form)->save();
 
         return redirect('admin/admin_home');
     }
 
     public function edit(Request $request)
     {
-        $aticle = Aticle::where('id', $request->id)->first();
+        $article = Article::where('id', $request->id)->first();
 
-        return view('admin.aticle.edit', ['aticle_form' => $aticle]);
+        return view('admin.article.edit', ['article_form' => $article]);
     }
 
     public function update(Request $request)
     {
-        $this->validate($request, Aticle::$rules);
+        $this->validate($request, Article::$rules);
 
-        $aticle = Aticle::where('id', $request->id)->first();
-        $aticle_form = $request->all();
+        $article = Article::where('id', $request->id)->first();
+        $article_form = $request->all();
 
-        if (isset($aticle_form['image'])) {
-            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
-            $aticle->image_path = Storage::disk('s3')->url($path);;
-            unset($aticle_form['image']);
+        if (isset($article_form['image'])) {
+            $path = Storage::disk('s3')->putFile('/',$article_form['image'],'public');
+            $article->image_path = Storage::disk('s3')->url($path);;
+            unset($article_form['image']);
         }
 
         if (isset($request->remove)) {
-            $aticle->image_path = null;
-            unset($aticle_form['remove']);
+            $article->image_path = null;
+            unset($article_form['remove']);
         }
 
-        unset($aticle_form['_token']);
+        unset($article_form['_token']);
 
-        $aticle->fill($aticle_form)->save();
+        $article->fill($article_form)->save();
 
         return redirect('admin/admin_home');
     }
 
     public function delete(Request $request)
     {
-        $aticle = Aticle::where('id', $request->id)->delete();
+        $article = Article::where('id', $request->id)->delete();
 
         return redirect('admin/admin_home');
     }

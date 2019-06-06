@@ -10,12 +10,12 @@ class Article extends Model
     protected $guarded = array('id');
 
     protected $fillable = [
-        'title', 'content', 'image_path',
+        'title', 'body', 'image_path',
     ];
 
     public static $rules = array(
       'title' => 'required',
-      'content' => 'required'
+      'body' => 'required'
     );
 
     Public function user()
@@ -35,7 +35,7 @@ class Article extends Model
 
         return $parser->parse($this->body);
     }
-    
+
     //テンプレートからモデルの属性値として取得できるように..
     public function getMarkdownBodyAttribute()
     {

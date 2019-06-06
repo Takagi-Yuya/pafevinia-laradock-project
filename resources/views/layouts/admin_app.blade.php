@@ -43,6 +43,13 @@
           display: block;
           text-align: center;
         }
+        .image-article {
+          object-fit: cover;
+          height: auto;
+          max-width: 100%;
+          display: block;
+          text-align:center;
+        }
         .box{
             padding: 0.5em 1em;
             margin: 2em 0;

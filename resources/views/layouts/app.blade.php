@@ -49,7 +49,6 @@
              object-fit: cover;
           border-radius: 50%;
         }
-
         .image-profile {
           -o-object-fit: cover;
              object-fit: cover;
@@ -58,6 +57,13 @@
           max-width: 100%;
           display: block;
           text-align: center;
+        }
+        .image-article {
+          object-fit: cover;
+          height: auto;
+          width: auto;
+          display: block;
+          text-align:center;
         }
         .ws-nr{
             white-space: nowrap;
