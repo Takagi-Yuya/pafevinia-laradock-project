@@ -24,7 +24,15 @@ class AticleController extends Controller
         $aticles->user_id = $user->id;
         $form = $request->all();
 
+        if (isset($form['image'])) {
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $articles->image_path = Storage::disk('s3')->url($path);;
+        } else {
+            $articles->image_path = null;
+        }
+
         unset($form['_token']);
+        unset($form['image']);
 
         $aticles->fill($form)->save();
 
@@ -44,6 +52,17 @@ class AticleController extends Controller
 
         $aticle = Aticle::where('id', $request->id)->first();
         $aticle_form = $request->all();
+
+        if (isset($aticle_form['image'])) {
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $aticle->image_path = Storage::disk('s3')->url($path);;
+            unset($aticle_form['image']);
+        }
+
+        if (isset($request->remove)) {
+            $aticle->image_path = null;
+            unset($aticle_form['remove']);
+        }
 
         unset($aticle_form['_token']);
 

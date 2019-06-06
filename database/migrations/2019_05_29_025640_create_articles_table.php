@@ -16,6 +16,7 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            //renameしてcontent->bodyへ（マークダウン対応の為）
             $table->text('content');
             $table->integer('user_id');
             $table->string('image_path')->nullable();
