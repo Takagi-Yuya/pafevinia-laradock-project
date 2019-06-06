@@ -13,12 +13,12 @@ use Storage;
 
 class AdminController extends Controller
 {
-    public function list_of_function()
+    public function list_of_function(Request $request)
     {
         $user = Auth::user();
         $profile = Profile::find($user->id);
-        $news = News::where('user_id', Auth::id())->orderBy('created_at', 'desc')->paginate(5);
-        $articles = Article::where('user_id', Auth::id())->orderBy('created_at', 'desc')->paginate(5);
+        $news = News::where('user_id', Auth::id())->orderBy('created_at', 'desc')->paginate(5, ["*"], 'news-pn')->appends(["articles-pn"=>$request->input('articles-pn')]);
+        $articles = Article::where('user_id', Auth::id())->orderBy('created_at', 'desc')->paginate(5, ["*"], 'articles-pn')->appends(["news-pn"=>$request->input('news-pn')]);
 
         return view('admin.admin_home', ['profile' => $profile, 'user' => $user, 'news' => $news, 'articles' => $articles]);
     }
