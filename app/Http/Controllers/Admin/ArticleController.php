@@ -78,4 +78,12 @@ class ArticleController extends Controller
 
         return redirect('admin/admin_home');
     }
+
+    //記事毎の個別表示
+    public function show(Request $request)
+    {
+        $article = Article::with(['user', 'profile'])->where('id', $request->id)->first();
+
+        return view('article.show', ['article' => $article]);
+    }
 }

@@ -65,7 +65,22 @@
           display: block;
           text-align:center;
         }
-        .ws-nr{
+        .box {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #5d627b;
+            background: white;
+            border-top: solid 2px #1E575A;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        }
+        /*カードの右下配置*/
+        .card a {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        /*改行無し*/
+        .ws-nr {
             white-space: nowrap;
         }
     </style>

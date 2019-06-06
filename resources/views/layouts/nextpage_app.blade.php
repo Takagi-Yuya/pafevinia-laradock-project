@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>pafevinia🦒(admin)</title>
+    <title>pafevinia🦒</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,11 +21,26 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
+        #toppage {
+            background-image: url('../images/wakuwaku.jpg');
+            position: relative;
+            z-index: 0;
+            margin: 15px auto;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 50%;
+            height: 450px;
+            max-width: 650px; /* 最大幅 */
+            min-width: 400px; /* 最小幅 */
+        }
         .title {
-            font-size: 50px;
-            color: #1E575A;
+            font-size: 70px;
+            color: #e9ecef;
             text-shadow: 5px 5px 5px #808080;
-            margin: 20px;
+            margin-bottom: 20px;
+        }
+        .card-height {
+            height: 95%;
         }
         .image-mini {
           width: 32px;
@@ -68,34 +83,35 @@
         .ws-nr {
             white-space: nowrap;
         }
-        .card-height {
-            height: 95%;
-        }
     </style>
 
 </head>
 <body>
-    <div class="bg-white shadow-sm">
-        <div id="toppage">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <h1 class="title">pafevinia🦒(admin)</h1>
-                </div>
+    <div id="toppage">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="title">pafevinia🦒</h1>
             </div>
         </div>
-        <div align="center">
-            <a href="{{ url('/') }}"><i class="fas fa-home"></i> GuestHome</a>
-            <br>
-            <a href="{{ url('/admin/admin_home') }}"><i class="fas fa-home"></i> AdminHome</a>
-        </div>
     </div>
+    <div align="center" >
+        <a href="{{ url('/') }}">
+        <i class="fas fa-home"></i> HOME
+        </a>
+    </div>
+    <hr>
     <div id="app">
-        <main class="py-4 mt-3">
+        <main class="py-4">
             @yield('content')
         </main>
     </div>
 </body>
 <footer>
+    <div align="center" >
+        <a href="{{ url('/') }}">
+        <i class="fas fa-home"></i> HOME
+        </a>
+    </div>
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <div class="pt-3 pl-5">
@@ -110,11 +126,11 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('管理者Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Admin Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('管理者Add') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Admin Add') }}</a>
                             </li>
                         @endif
                     @else

@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Profile;
+use App\User;
+use App\News;
+use App\Article;
+use Illuminate\Support\Facades\Auth;
+use Storage;
 
 class HomeController extends Controller
 {
@@ -11,7 +18,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    //ログイン不要で見られる 
+    //ログイン不要で見られる
     public function __construct()
     {
         //$this->middleware('auth');
@@ -22,8 +29,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $users = User::all();
+        $profiles = Profile::all();
+        $news = News::orderBy('created_at', 'desc')->paginate(6, ["*"], 'news-pn');//->appends(["articles-pn"=>$request->input('articles-pn')]);
+        $articles = Article::orderBy('created_at', 'desc')->paginate(6, ["*"], 'articles-pn');//->appends(["news-pn"=>$request->input('news-pn')]);
+
+        return view('home', ['profiles' => $profiles, 'users' => $users, 'news' => $news, 'articles' => $articles]);
     }
 }
