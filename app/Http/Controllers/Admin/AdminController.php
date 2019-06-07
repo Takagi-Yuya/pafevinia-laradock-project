@@ -18,7 +18,7 @@ class AdminController extends Controller
         $user = Auth::user();
         $profile = Profile::find($user->id);
         $news = News::where('user_id', Auth::id())->orderBy('created_at', 'desc')->paginate(6, ["*"], 'news-pn')->appends(["articles-pn"=>$request->input('articles-pn')]);
-        $articles = Article::where('user_id', Auth::id())->orderBy('created_at', 'desc')->paginate(10, ["*"], 'articles-pn')->appends(["news-pn"=>$request->input('news-pn')]);
+        $articles = Article::where('user_id', Auth::id())->orderBy('created_at', 'desc')->paginate(12, ["*"], 'articles-pn')->appends(["news-pn"=>$request->input('news-pn')]);
 
         return view('admin.admin_home', ['profile' => $profile, 'user' => $user, 'news' => $news, 'articles' => $articles]);
     }

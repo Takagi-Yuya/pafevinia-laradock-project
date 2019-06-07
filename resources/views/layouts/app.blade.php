@@ -32,6 +32,7 @@
             height: 450px;
             max-width: 650px; /* 最大幅 */
             min-width: 400px; /* 最小幅 */
+            filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
         }
         .title {
             font-size: 70px;
@@ -43,27 +44,34 @@
             height: 95%;
         }
         .image-mini {
-          width: 32px;
-          height: 32px;
-          -o-object-fit: cover;
-             object-fit: cover;
-          border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            -o-object-fit: cover;
+               object-fit: cover;
+            border-radius: 50%;
+        }
+        .image-middle {
+            width: 60px;
+            height: 60px;
+            -o-object-fit: cover;
+               object-fit: cover;
+            border-radius: 50%;
         }
         .image-profile {
-          -o-object-fit: cover;
-             object-fit: cover;
-          border-radius: 50%;
-          height: auto;
-          max-width: 100%;
-          display: block;
-          text-align: center;
+            -o-object-fit: cover;
+               object-fit: cover;
+            border-radius: 50%;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            text-align: center;
         }
         .image-article {
-          object-fit: cover;
-          height: auto;
-          width: auto;
-          display: block;
-          text-align:center;
+            object-fit: cover;
+            height: auto;
+            width: auto;
+            display: block;
+            text-align:center;
         }
         .box {
             padding: 0.5em 1em;
@@ -83,6 +91,145 @@
         .ws-nr {
             white-space: nowrap;
         }
+        /*about backgroundimage 用*/
+        #about_img {
+            background-image: url('images/cool.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #about_img::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: -1px;
+            right: -1px;
+            background: inherit;
+            filter: blur(4px);
+            z-index: -1;
+        }
+        #news_img {
+            background-image: url('images/kopen.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #news_img::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: -1px;
+            right: -1px;
+            background: inherit;
+            filter: blur(3px);
+            z-index: -1;
+        }
+        .font-about {
+            color: #404040;
+            font-size: 15px;
+            text-shadow: 0px 0px 0.8px #000,2px 2px 2px #FFF;
+        }
+        /*ふわっと拡大*/
+        .slowly {
+            display: inline-block;
+            transition: .5s;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        .slowly:hover {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+        .user-link:link {
+            color: #404040;
+        }
+
+        /*~~~SNSボタン wide~~~*/
+        /* ボタン全体 */
+        .flowbtn12{
+            font-family:'Verdana',sans-serif;
+            border-radius: 4px;
+            display:inline-block;
+            width:90%;
+            font-size:20px;
+            transition:.4s;
+            text-decoration:none;
+        }
+        /* ボタン内テキストマウスホバー時 */
+        .flowbtn12:hover{
+            color:#fff!important;
+            text-decoration:none;
+        }
+        /* Twitter */
+        .flowbtn12.fl_tw2{
+            border:solid 1px #55acee;
+            color:#55acee;
+        }
+        /* Twitterマウスホバー時 */
+        .flowbtn12.fl_tw2:hover{
+            border:solid 1px #55acee;
+            background:#55acee;
+        }
+        /* Instagram */
+        .flowbtn12.insta_btn2{
+            border:solid 1px #c6529a;
+            color:#c6529a;
+        }
+        /* Instagramマウスホバー時 */
+        .flowbtn12.insta_btn2:hover{
+            border:solid 1px #c6529a;
+            background:#c6529a;
+        }
+        /* Facebook */
+        .flowbtn12.fl_fb2{
+            border:solid 1px #3b5998;
+            color:#3b5998;
+        }
+        /* Facebookマウスホバー時 */
+        .flowbtn12.fl_fb2:hover{
+            border:solid 1px #3b5998;
+            background:#3b5998;
+        }
+        /* メールアイコン */
+        .flowbtn12.fl_ma2{
+            border:solid 1px #f3981d;
+            color:#f3981d;
+        }
+        /* メールアイコンマウスホバー時 */
+        .flowbtn12.fl_ma2:hover{
+            border:solid 1px #f3981d;
+            background:#f3981d;
+        }
+        /* ボタン内テキスト調整 */
+        .flowbtn12 span{
+            font-size:14px;
+            position:relative;
+            left:8px;
+            bottom:2px;
+        }
+        /* ulタグの内側余白を０にする */
+        ul.snsbtniti2{
+            padding:0!important;
+            list-style: none;
+        }
+        /* ボタン全体の位置 */
+        .snsbtniti2{
+            display:flex;
+            flex-flow:row wrap;
+        }
+        /* ボタン同士の余白 */
+        .snsbtniti2 li{
+            flex:0 0 48%;
+            text-align:center !important;
+        }
     </style>
 
 </head>
@@ -95,11 +242,11 @@
         </div>
     </div>
     <div align="center" >
-        <a href="{{ url('/') }}">
+        <a href="{{ url('/') }}" class="slowly">
         <i class="fas fa-home"></i> HOME
         </a>
     </div>
-    <hr>
+    <hr><hr>
     <div id="app">
         <main class="py-4">
             @yield('content')
@@ -108,7 +255,7 @@
 </body>
 <footer>
     <div align="center" >
-        <a href="{{ url('/') }}">
+        <a href="{{ url('/') }}" class="slowly">
         <i class="fas fa-home"></i> HOME
         </a>
     </div>

@@ -32,6 +32,7 @@
             height: 450px;
             max-width: 650px; /* 最大幅 */
             min-width: 400px; /* 最小幅 */
+            filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
         }
         .title {
             font-size: 70px;
@@ -83,6 +84,85 @@
         .ws-nr {
             white-space: nowrap;
         }
+
+        /*~~~SNSボタン wide~~~*/
+        /* ボタン全体 */
+        .flowbtn12{
+            font-family:'Verdana',sans-serif;
+            border-radius: 4px;
+            display:inline-block;
+            width:90%;
+            font-size:20px;
+            transition:.4s;
+            text-decoration:none;
+        }
+        /* ボタン内テキストマウスホバー時 */
+        .flowbtn12:hover{
+            color:#fff!important;
+            text-decoration:none;
+        }
+        /* Twitter */
+        .flowbtn12.fl_tw2{
+            border:solid 1px #55acee;
+            color:#55acee;
+        }
+        /* Twitterマウスホバー時 */
+        .flowbtn12.fl_tw2:hover{
+            border:solid 1px #55acee;
+            background:#55acee;
+        }
+        /* Instagram */
+        .flowbtn12.insta_btn2{
+            border:solid 1px #c6529a;
+            color:#c6529a;
+        }
+        /* Instagramマウスホバー時 */
+        .flowbtn12.insta_btn2:hover{
+            border:solid 1px #c6529a;
+            background:#c6529a;
+        }
+        /* Facebook */
+        .flowbtn12.fl_fb2{
+            border:solid 1px #3b5998;
+            color:#3b5998;
+        }
+        /* Facebookマウスホバー時 */
+        .flowbtn12.fl_fb2:hover{
+            border:solid 1px #3b5998;
+            background:#3b5998;
+        }
+        /* メールアイコン */
+        .flowbtn12.fl_ma2{
+            border:solid 1px #f3981d;
+            color:#f3981d;
+        }
+        /* メールアイコンマウスホバー時 */
+        .flowbtn12.fl_ma2:hover{
+            border:solid 1px #f3981d;
+            background:#f3981d;
+        }
+        /* ボタン内テキスト調整 */
+        .flowbtn12 span{
+            font-size:14px;
+            position:relative;
+            left:8px;
+            bottom:2px;
+        }
+        /* ulタグの内側余白を０にする */
+        ul.snsbtniti2{
+            padding:0!important;
+            list-style: none;
+        }
+        /* ボタン全体の位置 */
+        .snsbtniti2{
+            display:flex;
+            flex-flow:row wrap;
+        }
+        /* ボタン同士の余白 */
+        .snsbtniti2 li{
+            flex:0 0 48%;
+            text-align:center !important;
+        }
     </style>
 
 </head>
@@ -99,7 +179,7 @@
         <i class="fas fa-home"></i> HOME
         </a>
     </div>
-    <hr>
+    <hr><hr>
     <div id="app">
         <main class="py-4">
             @yield('content')

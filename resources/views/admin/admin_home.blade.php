@@ -31,14 +31,13 @@
                     </div>
                     <div class="col-md-10 mx-auto">
                         <br>
-                        <hr size="3" color="gray">
                         <p>-name-<h4>{{ $user->name }}</h4></p>
                         <hr size="3" color="gray">
                         <p>※You don't have profile details yet...</p>
                         <hr size="3" color="gray">
                     </div>
                     <div class="col-md-8 mx-auto text-right">
-                        <a href="{{ action('Admin\ProfileController@add') }}" role='button' class='pr-5 pl-5 btn btn-success'><i class="fas fa-pencil-alt"></i> Create New (details)</a>
+                        <a href="{{ action('Admin\ProfileController@add') }}" role='button' class='pr-5 pl-5 mt-3 btn btn-success'><i class="fas fa-pencil-alt"></i> Create New (details)</a>
                     </div>
                 @endif
 
@@ -61,7 +60,7 @@
             </div>
             <br>
             <div class="col-md-8 mx-auto text-right">
-                <a href="{{ action('Admin\NewsController@add') }}" role='button' class='pr-5 pl-5 btn btn-success'><i class="fas fa-pencil-alt"></i> Create New</a>
+                <a href="{{ action('Admin\NewsController@add') }}" role='button' class='pr-5 pl-5 mt-3 btn btn-success'><i class="fas fa-pencil-alt"></i> Create New</a>
             </div>
         </div>
     </div>
@@ -76,10 +75,21 @@
                 @foreach ($articles as $article)
                     <div class="col-md-3 col-sm-4 col-xs-6">
                         <div class="card m-1 card-height shadow-sm">
-                            <span class="badge badge-secondary"><img src="{{ $user->profile->image_path }}" class="image-mini mx-auto"> {{ $user->profile->name }}</span>
+                            <span class="badge badge-secondary">
+                                @if ($article->user->profile != null && $article->user->profile->image_path != null)
+                                    <img src="{{ $article->user->profile->image_path }}" class="image-mini mx-auto">
+                                    {{ $article->user->profile->name }}
+                                @elseif ($article->user->profile != null && $article->user->profile->image_path == null)
+                                    <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-mini mx-auto">
+                                    {{ $article->user->profile->name }}
+                                @elseif ($article->user->profile == null)
+                                    <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-mini mx-auto">
+                                    {{ $article->user->name }}
+                                @endif
+                            </span>
                             <a href="{{ action('Admin\ArticleController@edit', ['id' => $article->id]) }}" role='button' class='m-2 btn btn-success'><i class="fas fa-wrench"></i> Edit</a>
                             <a href="{{ action('Admin\ArticleController@delete', ['id' => $article->id]) }}" role='button' class='m-2 btn btn-danger'><i class="fas fa-ban"></i> Delete</a>
-                            @if ($article->image_path)
+                            @if ($article->image_path != null)
                                 <img class="card-img-top" src="{{ $article->image_path }}" alt="Card image cap">
                             @endif
                             <div class="card-body">
@@ -100,8 +110,8 @@
         {{ $articles->links() }}
     </div>
     <br>
-    <div class="col-md-11 mx-auto text-right">
-        <a href="{{ action('Admin\ArticleController@add') }}" role='button' class='pr-5 pl-5 btn btn-success'><i class="fas fa-pencil-alt"></i> Create New</a>
+    <div class="col-md-10 mx-auto text-right">
+        <a href="{{ action('Admin\ArticleController@add') }}" role='button' class='pr-5 pl-5 mt-3 btn btn-success'><i class="fas fa-pencil-alt"></i> Create New</a>
     </div>
 </div>
 @endsection

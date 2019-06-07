@@ -6,7 +6,7 @@
         <div class="col-md-11 mx-auto">
             <p><i class="far fa-clock"></i> {{ $article->created_at->format('Y/m/d/D') }}</p>
             <div class="image col-md-11 mx-auto">
-                @if ($article->image_path)
+                @if ($article->image_path != null)
                     <img src="{{ $article->image_path }}" alt="" class="image-article mx-auto">
                 @endif
             </div>
@@ -15,7 +15,12 @@
             <hr size="3" color="gray">
             <p>{!! $article->markdown_body !!}</p> <!-- HTMLをそのまま表示するため、エスケープをしないリテラルに変更 -->
             <hr size="3" color="gray">
-            <a href="http://twitter.com/share?url={{ request()->fullUrl() }}&text=pafeviniaの新しい記事→『{{ $article->title }}』"><i class="fab fa-twitter"></i>Twitterでシェア</a>
+            <br>
+            <ul class="snsbtniti2">
+                <li>
+                    <a href="http://twitter.com/share?url={{ request()->fullUrl() }}&text=pafeviniaの新しい記事→『{{ $article->title }}』" class="flowbtn12 fl_tw2"><i class="fab fa-twitter"></i><span>Twitterで記事をシェア</span></a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

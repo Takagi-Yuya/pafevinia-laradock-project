@@ -17,8 +17,15 @@
 
 Auth::routes();
 
+//認証無しで閲覧可能
+//↓↓
+//TOPページ
 Route::get('/', 'HomeController@index')->name('home');
+//記事の個別ページ
 Route::get('article/show', 'Admin\ArticleController@show');
+//personal
+Route::get('personal/show', 'Admin\ProfileController@show');
+
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     //admin_home

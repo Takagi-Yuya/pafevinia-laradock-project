@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile;
 use App\User;
+use App\Article;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 
@@ -68,5 +69,13 @@ class ProfileController extends Controller
         $profile->fill($profile_form)->save();
 
         return redirect('admin/admin_home');
+    }
+
+    public function show(Request $request)
+    {
+        $user = User::find($request->id);
+        $articles = Article::where('user_id', $user->id)->orderBy('created_at', 'desc')->paginate(12);
+
+        return view('personal.show', ['user' => $user, 'articles' => $articles]);
     }
 }

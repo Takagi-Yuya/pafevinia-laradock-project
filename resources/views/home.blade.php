@@ -3,24 +3,34 @@
 @section('content')
 <div class="container">
     <div class="row mb-5 justify-content-center">
-        <div class="col-md-8">
-            <div class="card m-2 shadow-sm">
+        <div class="col-md-7">
+            <div id="news_img" class="card m-2 shadow-sm font-about">
                 <div class="card-header">
-                    <h4><i class="fas fa-bullhorn"></i> pafevinia NEWS</h4>
+                    <h3><i class="fas fa-bullhorn"></i> pafevinia NEWS</h3>
                 </div>
                 <div class="card-body">
                     @foreach ($news as $news_part)
-                        <div class="col-md-10 mx-auto">
-                            <p><small><i class="fas fa-bullhorn"></i> {{ $news_part->created_at->format('Y/m/d/D') }} </small> ー <img src="{{ $news_part->user->profile->image_path }}" class="image-mini mx-auto"> {{ $news_part->content }}</p>
+                        <div class="col-md-12 mx-auto">
+                            <p>
+                                <small><i class="fas fa-bullhorn"></i> {{ $news_part->created_at->format('Y/m/d/D') }} ーー </small>
+                                @if ($news_part->user->profile != null && $news_part->user->profile->image_path != null)
+                                    <img src="{{ $news_part->user->profile->image_path }}" class="image-mini mx-auto">
+                                @elseif ($news_part->user->profile != null && $news_part->user->profile->image_path == null)
+                                    <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-mini mx-auto">
+                                @elseif ($news_part->user->profile == null)
+                                    <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-mini mx-auto">
+                                @endif
+                                {{ $news_part->content }}
+                            </p>
                         </div>
                     @endforeach
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card m-2 shadow-sm">
+        <div class="col-md-5">
+            <div id="about_img" class="card m-2 shadow-sm font-about">
                 <div class="card-header">
-                    <h4><i class="fas fa-certificate"></i> about "pafevinia"...</h4>
+                    <h3><i class="fas fa-certificate"></i> What's about "pafevinia"</h3>
                 </div>
                 <div class="card-body">
                     僕達はpafeviniaです。
@@ -28,22 +38,35 @@
                     由来は忘れました。
                     <br>
                     (パイオニアから来ていたような)
-                    <br>
+                    <br><br>
                     難しいことは分かりませんが、みんながそれぞれの形で毎日ワクワク出来るような最高の人生を送る為に日々奮闘しています。
-                    <br>
-                    このサイトはpafeviniaの愉快な仲間たちが共同でオールジャンルのブログを運営していきます🦒
+                    <br><br>
+                    このサイトはpafeviniaの愉快な仲間たちが共同でオールジャンルのブログを運営していきます。
+                    <br><br>
+                    <h4>🦒 We are all set to get crazy 🦒</h4>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row pt-3">
         <div class="col-lg-8">
             <div class="row">
                 @foreach ($articles as $article)
                     <div class="col-md-4 col-sm-6 col-xs-6">
                         <div class="card m-1 card-height shadow-sm">
-                            <a href="#" class="badge badge-secondary"><img src="{{ $article->user->profile->image_path }}" class="image-mini mx-auto"> {{ $article->user->profile->name }}</a>
-                            @if ($article->image_path)
+                            <a href="{{ action('Admin\ProfileController@show', ['id' => $article->user->id]) }}" class="badge badge-secondary slowly">
+                              @if ($article->user->profile != null && $article->user->profile->image_path != null)
+                                  <img src="{{ $article->user->profile->image_path }}" class="image-mini mx-auto">
+                                  {{ $article->user->profile->name }}
+                              @elseif ($article->user->profile != null && $article->user->profile->image_path == null)
+                                  <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-mini mx-auto">
+                                  {{ $article->user->profile->name }}
+                              @elseif ($article->user->profile == null)
+                                  <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-mini mx-auto">
+                                  {{ $article->user->name }}
+                              @endif
+                            </a>
+                            @if ($article->image_path != null)
                                 <img class="card-img-top" src="{{ $article->image_path }}" alt="Card image cap">
                             @endif
                             <div class="card-body">
@@ -51,7 +74,7 @@
                                 <h4 class="card-title">{{ $article->title }}</h4>
                                 <hr size="3" color="gray">
                                 <div class="p-4 text-right">
-                                    <a href="{{ action('Admin\ArticleController@show', ['id' => $article->id]) }}" class="btn btn-primary"><i class="fas fa-plane"></i> read more</a>
+                                    <a href="{{ action('Admin\ArticleController@show', ['id' => $article->id]) }}" class="btn btn-primary slowly"><i class="fas fa-plane"></i> read more</a>
                                 </div>
                             </div>
                         </div>
@@ -65,15 +88,27 @@
         <div class="col-lg-4">
             <div class="card m-1 shadow-sm">
                 <div class="card-header">
-                    <h4><i class="fas fa-user-astronaut"></i> user list</h4>
+                    <h3><i class="fas fa-user-astronaut"></i> user list</h3>
                 </div>
-                <div class="card-body">
-                    <p class="card-text">user</p>
-                    <p class="card-text">user</p>
-                    <p class="card-text">user</p>
-                    <p class="card-text">user</p>
-                    <p class="card-text">user</p>
-                </div>
+                @foreach ($users as $user)
+                    <a href="{{ action('Admin\ProfileController@show', ['id' => $user->id]) }}" class="card-body text-center user-link slowly">
+                        <p class="card-text">
+                            @if ($user->profile != null && $user->profile->image_path != null)
+                                <img src="{{ $user->profile->image_path }}" class="image-middle mx-auto">
+                                <h4>-{{ $user->profile->name }}-</h4>
+                                <h6>{{ $user->profile->introduction }}</h6>
+                            @elseif ($user->profile != null && $user->profile->image_path == null)
+                                <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-middle mx-auto">
+                                <h4>-{{ $user->profile->name }}-</h4>
+                                <h6>{{ $user->profile->introduction }}</h6>
+                            @elseif ($user->profile == null)
+                                <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-middle mx-auto">
+                                <h4>-{{ $user->name }}-</h4>
+                            @endif
+                            <hr>
+                        </p>
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
