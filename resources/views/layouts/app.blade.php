@@ -8,10 +8,9 @@
     <meta property="og:title" content="pafevinia🦒 (共同運営ブログ)">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pafevinia.herokuapp.com/">
-    <meta property="og:image" content="https://pafevinia.s3-ap-northeast-1.amazonaws.com/taui5SGCvtOeM5GbOLs42lRxJ1cBLy1gdBn1R1ge.jpeg">
+    <meta property="og:image" content="https://pafevinia.s3-ap-northeast-1.amazonaws.com/538vVdbSd4qjolATWp81z9lEJgRTWJrfsv0mJk9K.jpeg">
     <meta property="og:description" content="pafeviniaの新しい記事が作成されました。">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://pafevinia.s3-ap-northeast-1.amazonaws.com/538vVdbSd4qjolATWp81z9lEJgRTWJrfsv0mJk9K.jpeg">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
