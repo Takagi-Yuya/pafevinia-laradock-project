@@ -92,7 +92,7 @@
                 </div>
                 @foreach ($users as $user)
                     <a href="{{ action('Admin\ProfileController@show', ['id' => $user->id]) }}" class="card-body text-center user-link slowly">
-                        <div class="card-text col-md-11 text-center">
+                        <div class="card-text col-md-12 text-center">
                             @if ($user->profile != null && $user->profile->image_path != null)
                                 <img src="{{ $user->profile->image_path }}" class="image-middle mx-auto">
                                 <h4>-{{ $user->profile->name }}-</h4>

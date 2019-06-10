@@ -241,20 +241,24 @@
     </style>
 
 </head>
-<body>
-    <div id="toppage">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h1 class="title">pafevinia🦒</h1>
+<header>
+    <div class="bg-white">
+        <div id="toppage">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1 class="title">pafevinia🦒</h1>
+                </div>
             </div>
         </div>
+        <div align="center" >
+            <a href="{{ url('/') }}" class="slowly">
+            <i class="fas fa-home"></i> HOME
+            </a>
+        </div>
+        <hr><hr>
     </div>
-    <div align="center" >
-        <a href="{{ url('/') }}" class="slowly">
-        <i class="fas fa-home"></i> HOME
-        </a>
-    </div>
-    <hr><hr>
+</header>
+<body>
     <div id="app">
         <main class="py-4">
             @yield('content')

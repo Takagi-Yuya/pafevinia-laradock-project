@@ -22,7 +22,7 @@
                 </li>
                 <li>
                     <a href="https://www.facebook.com/sharer.php?src=https://pafevinia.herokuapp.com/" class="flowbtn12 fl_fb2"><i class="fab fa-facebook-f"></i><span>Facebookで記事をシェア</span></a>
-                </li><!--{{ request()->fullUrl() }}&t=pafeviniaの新しい記事→『{{ $article->title }}』-->
+                </li>
             </ul>
         </div>
     </div>
