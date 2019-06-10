@@ -5,11 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="og:title" content="pafevinia🦒 (共同運営ブログ)">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pafevinia.herokuapp.com/">
-    <meta property="og:url" content="{{ request()->fullUrl() }}">
-    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZpJJanfJZATM0S0_Loydo_OhMR00pvim7N79gDk-CD4CZFQL9">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
