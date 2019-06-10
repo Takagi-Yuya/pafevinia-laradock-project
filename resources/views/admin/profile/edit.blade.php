@@ -21,6 +21,24 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-md-3 ws-nr" for="url_1">url_1：</label>
+                    <div class="col-md-9">
+                        <input class="form-control" type="text" name="url_1" value="{{ $profile_form->url_1 }}" placeholder="例）https://twitter.com/0201yu_ya">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 ws-nr" for="url_2">url_2：</label>
+                    <div class="col-md-9">
+                        <input class="form-control" type="text" name="url_2" value="{{ $profile_form->url_2 }}" placeholder="例）https://www.instagram.com/yanpi_0621/?hl=ja">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 ws-nr" for="url_3">url_3：</label>
+                    <div class="col-md-9">
+                        <input class="form-control" type="text" name="url_3" value="{{ $profile_form->url_3 }}" placeholder="例）https://www.facebook.com/yuya.takahi">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-md-3" for="image">profile image：</label>
                     <div class="col-md-9">
                         <input type="file" class="form-control-file" name="image">

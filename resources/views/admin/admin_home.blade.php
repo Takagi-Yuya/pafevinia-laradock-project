@@ -21,6 +21,12 @@
                         <hr size="3" color="gray">
                         <p>-introduction-<h4>{{ $user->profile->introduction }}</h4></p>
                         <hr size="3" color="gray">
+                        <p>-url-
+                            <h5><a href="{{ $user->profile->url_1 }}">{{ $user->profile->url_1 }}</a><h5>
+                            <h5><a href="{{ $user->profile->url_2 }}">{{ $user->profile->url_2 }}</a><h5>
+                            <h5><a href="{{ $user->profile->url_3 }}">{{ $user->profile->url_3 }}</a><h5>
+                        </p>
+                        <hr size="3" color="gray">
                     </div>
                     <div class="col-md-8 mx-auto text-right">
                         <a href="{{ action('Admin\ProfileController@edit', ['user_id' => $user->id]) }}" role='button' class='btn btn-success'><i class="fas fa-wrench"></i> Edit</a>

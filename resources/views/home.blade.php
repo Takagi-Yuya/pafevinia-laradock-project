@@ -92,21 +92,27 @@
                 </div>
                 @foreach ($users as $user)
                     <a href="{{ action('Admin\ProfileController@show', ['id' => $user->id]) }}" class="card-body text-center user-link slowly">
-                        <p class="card-text">
+                        <div class="card-text col-md-11 text-center">
                             @if ($user->profile != null && $user->profile->image_path != null)
                                 <img src="{{ $user->profile->image_path }}" class="image-middle mx-auto">
                                 <h4>-{{ $user->profile->name }}-</h4>
                                 <h6>{{ $user->profile->introduction }}</h6>
+                                <h6><a href="{{ $user->profile->url_1 }}">{{ $user->profile->url_1 }}</a><h6>
+                                <h6><a href="{{ $user->profile->url_2 }}">{{ $user->profile->url_2 }}</a><h6>
+                                <h6><a href="{{ $user->profile->url_3 }}">{{ $user->profile->url_3 }}</a><h6>
                             @elseif ($user->profile != null && $user->profile->image_path == null)
                                 <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-middle mx-auto">
                                 <h4>-{{ $user->profile->name }}-</h4>
                                 <h6>{{ $user->profile->introduction }}</h6>
+                                <h6><a href="{{ $user->profile->url_1 }}">{{ $user->profile->url_1 }}</a><h6>
+                                <h6><a href="{{ $user->profile->url_2 }}">{{ $user->profile->url_2 }}</a><h6>
+                                <h6><a href="{{ $user->profile->url_3 }}">{{ $user->profile->url_3 }}</a><h6>
                             @elseif ($user->profile == null)
                                 <img src="{{ asset('images/noprofileimage.jpg') }}" class="image-middle mx-auto">
                                 <h4>-{{ $user->name }}-</h4>
                             @endif
                             <hr>
-                        </p>
+                        </div>
                     </a>
                 @endforeach
             </div>
