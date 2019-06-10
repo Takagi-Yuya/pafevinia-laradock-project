@@ -8,7 +8,7 @@
     <meta property="og:title" content="pafevinia">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pafevinia.herokuapp.com/">
-    <meta property="og:image" content="file:///Users/takagiyuya/Pictures/pafeviniaaaaa.jpeg">
+    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZpJJanfJZATM0S0_Loydo_OhMR00pvim7N79gDk-CD4CZFQL9">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
