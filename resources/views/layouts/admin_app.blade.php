@@ -5,12 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="og:title" content="pafevinia🦒 (共同運営ブログ)">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pafevinia.herokuapp.com/">
-    <meta property="og:image" content="https://pafevinia.s3.ap-northeast-1.amazonaws.com/">
-    <meta property="og:description" content="pafeviniaの新しい記事→『{{ $article->title }}』">
-    <meta name="twitter:card" content="summary">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

@@ -8,11 +8,12 @@
     <meta property="og:title" content="pafevinia🦒 (共同運営ブログ)">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pafevinia.herokuapp.com/">
-    <meta property="og:image" content="https://pafevinia.s3.ap-northeast-1.amazonaws.com/">
-    <!-- 画像は投稿毎に対応させたい <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZpJJanfJZATM0S0_Loydo_OhMR00pvim7N79gDk-CD4CZFQL9"> -->
-    <meta property="og:description" content="pafeviniaの新しい記事→『{{ $article->title }}』" />
+    <meta property="og:image" content="https://pafevinia.s3-ap-northeast-1.amazonaws.com/taui5SGCvtOeM5GbOLs42lRxJ1cBLy1gdBn1R1ge.jpeg">
+    <meta property="og:description" content="pafeviniaの新しい記事が作成されました。">
+
     <meta name="twitter:card" content="summary">
-    <!--　これ必須？？　<meta name="twitter:site" content="@0201yu_ya">　　-->
+    <meta name="twitter:image" content="https://pafevinia.s3-ap-northeast-1.amazonaws.com/538vVdbSd4qjolATWp81z9lEJgRTWJrfsv0mJk9K.jpeg">
+    <meta name="twitter:description" content="pafeviniaの新しい記事→『{{ $article->title }}』">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
