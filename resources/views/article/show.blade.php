@@ -20,6 +20,9 @@
                 <li>
                     <a href="http://twitter.com/share?url={{ request()->fullUrl() }}&text=pafeviniaの新しい記事→『{{ $article->title }}』" class="flowbtn12 fl_tw2"><i class="fab fa-twitter"></i><span>Twitterで記事をシェア</span></a>
                 </li>
+                <li>
+                    <a href="https://www.facebook.com/sharer.php?src=https://pafevinia.herokuapp.com/" class="flowbtn12 fl_fb2"><i class="fab fa-facebook-f"></i><span>Facebookで記事をシェア</span></a>
+                </li><!--{{ request()->fullUrl() }}&t=pafeviniaの新しい記事→『{{ $article->title }}』-->
             </ul>
         </div>
     </div>

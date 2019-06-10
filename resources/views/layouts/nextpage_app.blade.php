@@ -5,6 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="pafevinia">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pafevinia.herokuapp.com/">
+    <meta property="og:image" content="file:///Users/takagiyuya/Pictures/pafeviniaaaaa.jpeg">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
