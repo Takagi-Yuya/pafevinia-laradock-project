@@ -37,7 +37,10 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        //$this->middleware('guest');
+        
+        //ログイン状態のユーザー(管理者)からしか新規ユーザー登録不可に。
+        $this->middleware('auth');
     }
 
     /**
