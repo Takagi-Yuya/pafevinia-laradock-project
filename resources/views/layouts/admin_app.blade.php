@@ -19,6 +19,16 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script>
+    //delete check
+    function delete_alert(e){
+       if(!window.confirm('本当に削除しますか？')){
+          window.alert('キャンセルされました');
+          return false;
+       }
+       document.deleteform.submit();
+    };
+    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

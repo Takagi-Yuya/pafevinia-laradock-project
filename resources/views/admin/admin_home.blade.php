@@ -94,7 +94,7 @@
                                 @endif
                             </span>
                             <a href="{{ action('Admin\ArticleController@edit', ['id' => $article->id]) }}" role='button' class='m-2 btn btn-success'><i class="fas fa-wrench"></i> Edit</a>
-                            <a href="{{ action('Admin\ArticleController@delete', ['id' => $article->id]) }}" role='button' class='m-2 btn btn-danger'><i class="fas fa-ban"></i> Delete</a>
+                            <a href="{{ action('Admin\ArticleController@delete', ['id' => $article->id]) }}" role='button' class='m-2 btn btn-danger' onClick="delete_alert(event);return false;"><i class="fas fa-ban"></i> Delete</a>
                             @if ($article->image_path != null)
                                 <img class="card-img-top" src="{{ $article->image_path }}" alt="Card image cap">
                             @endif
