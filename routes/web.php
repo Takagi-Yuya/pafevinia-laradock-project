@@ -25,6 +25,9 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('article/show', 'Admin\ArticleController@show');
 //personal
 Route::get('personal/show', 'Admin\ProfileController@show');
+//検索機能関係
+Route::get('search', 'SearchController@search');
+
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {

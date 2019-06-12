@@ -50,6 +50,7 @@
     </div>
     <div class="row pt-3">
         <div class="col-lg-8">
+            @include ('partials.search.form_search')
             <div class="row">
                 @foreach ($articles as $article)
                     <div class="col-md-4 col-sm-6 col-xs-6">

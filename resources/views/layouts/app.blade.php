@@ -238,6 +238,40 @@
             flex:0 0 48%;
             text-align:center !important;
         }
+        /* ~~~検索フォーム~~~ */
+        #form1{
+            position: relative;
+            max-width: 500px;
+            margin-bottom: 60px;
+        }
+        #sbox1{
+            border: 1px #C9C9C9 solid;
+            height: 50px;
+            padding-left: 15px;
+            padding-right: 45px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            outline: 0;
+            background: #eee;
+            border-radius:25px;
+        }
+        #sbtn1{
+            border: none;
+            height: 50px;
+            position: absolute;
+            left: 175px;
+            top: 0;
+            background: none;
+            color: #666;
+            border: none;
+            font-size: 20px;
+            outline: 0;
+        }
+        #sbtn:hover{
+            color:#7fbfff;
+          }
+        }
     </style>
 
 </head>
@@ -289,7 +323,7 @@
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Admin Add') }}</a>
+                              <!--<a class="nav-link" href="{{ route('register') }}">{{ __('管理者Add') }}</a>-->
                             </li>
                         @endif
                     @else

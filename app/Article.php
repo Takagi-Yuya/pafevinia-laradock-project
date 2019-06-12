@@ -10,7 +10,7 @@ class Article extends Model
     protected $guarded = array('id');
 
     protected $fillable = [
-        'title', 'body', 'image_path',
+        'title', 'body', 'image_path', 'user_id'
     ];
 
     public static $rules = array(
@@ -25,7 +25,7 @@ class Article extends Model
 
     Public function profile()
     {
-        return $this->belongsTo('App\Profile');
+        return $this->belongsTo('App\Profile', 'user_id');
     }
 
     //markdownのパース Articleモデルに自身のbodyをパースするためのparse()メソッドを追加
