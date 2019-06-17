@@ -43,7 +43,7 @@
                     <br><br>
                     このサイトはpafeviniaの愉快な仲間たちが共同でオールジャンルのブログを運営していきます。
                     <br><br>
-                    <h4>🦒 We are all set to get crazy 🦒</h4>
+                    <h4> We are all set to get crazy 🦒</h4>
                 </div>
             </div>
         </div>
