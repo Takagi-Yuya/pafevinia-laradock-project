@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta property="og:title" content="pafevinia🦒 (共同運営ブログ)">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pafevinia.herokuapp.com/">
+    <meta property="og:url" content="https://www.pafevinia.com/">
     <meta property="og:image" content="https://pafevinia.s3-ap-northeast-1.amazonaws.com/538vVdbSd4qjolATWp81z9lEJgRTWJrfsv0mJk9K.jpeg">
     <meta property="og:description" content="pafeviniaの新しい記事が作成されました。">
     <meta name="twitter:card" content="summary">

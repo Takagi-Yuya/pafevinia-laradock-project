@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta property="og:title" content="pafevinia">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pafevinia.herokuapp.com/">
-    <meta property="og:image" content="https://pafevinia.herokuapp.com/">
+    <meta property="og:url" content="https://www.pafevinia.com/">
+    <meta property="og:image" content="https://www.pafevinia.com/">
 
         <title>pafevinia🦒</title>
 
