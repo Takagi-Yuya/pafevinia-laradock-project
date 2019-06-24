@@ -293,11 +293,7 @@
                 </div>
             </div>
         </div>
-        <div align="center" >
-            <a href="{{ url('/') }}" class="slowly">
-            <i class="fas fa-home"></i> HOME
-            </a>
-        </div>
+        @include('partials.button.form_homebutton')
         <hr><hr>
     </div>
 </header>
@@ -309,11 +305,7 @@
     </div>
 </body>
 <footer>
-    <div align="center" >
-        <a href="{{ url('/') }}" class="slowly">
-        <i class="fas fa-home"></i> HOME
-        </a>
-    </div>
+    @include('partials.button.form_homebutton')
     @include('partials.navbar.form_navbar')
 </footer>
 </html>
