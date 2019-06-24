@@ -11,8 +11,8 @@ class Profile extends Model
     protected $guarded = ['user_id'];
 
     public static $rules = array(
-      'name' => 'required',
-      'introduction' => 'required'
+        'name' => 'required',
+        'introduction' => 'required'
     );
 
     Public function user()
