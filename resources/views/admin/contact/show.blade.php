@@ -23,5 +23,8 @@
             @endforeach
         </div>
     </div>
+    <div class="d-flex justify-content-center"> <!-- 検索ボックス付けるなら appends(Request::all()) 必要？ -->
+        {{ $contacts->links() }}
+    </div>
 </div>
 @endsection
