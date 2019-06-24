@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="card m-1 shadow-sm">
+            <div class="card shadow-sm">
                 <div class="card-header">
                     <h3><i class="fas fa-user-astronaut"></i> user list</h3>
                 </div>
@@ -117,7 +117,7 @@
                     </a>
                 @endforeach
             </div>
-            <div class="card m-2 shadow-sm">
+            <div class="card mt-3 shadow-sm">
                 <div class="card-header">
                     <h3><i class="far fa-paper-plane"></i> contact</h3>
                 </div>
