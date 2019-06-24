@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
-    public function show()
+    public function add()
     {
         return view('contact.create');
     }
@@ -25,5 +25,13 @@ class ContactController extends Controller
         $contact->fill($form)->save();
 
         return redirect('/');
+    }
+
+    //admin 専用　一覧表示
+    public function show()
+    {
+        $contacts = Contact::orderBy('created_at', 'desc')->paginate(10);
+
+        return view('admin.contact.show', ['contacts' => $contacts]);
     }
 }

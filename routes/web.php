@@ -28,7 +28,7 @@ Route::get('personal/show', 'Admin\ProfileController@show');
 //検索機能関係
 Route::get('search', 'SearchController@search');
 //お問い合わせフォーム(ゲスト)
-Route::get('contact/create', 'ContactController@show');
+Route::get('contact/create', 'ContactController@add');
 Route::post('contact/create', 'ContactController@create');
 
 
@@ -52,4 +52,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('article/edit', 'Admin\ArticleController@edit');
     Route::post('article/edit', 'Admin\ArticleController@update');
     Route::get('article/delete', 'Admin\ArticleController@delete');
+    //contact
+    Route::get('contact/show', 'ContactController@show');
 });

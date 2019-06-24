@@ -121,7 +121,7 @@
                 <div class="card-header">
                     <h3><i class="far fa-paper-plane"></i> contact</h3>
                 </div>
-                <a href="{{ action('ContactController@show') }}" class="card-body text-center btn btn-secondary m-4">
+                <a href="{{ action('ContactController@add') }}" class="card-body text-center btn btn-secondary m-4">
                     <p class="card-text col-md-12 text-center">
                         -お問い合わせはこちらから-
                     </p>
