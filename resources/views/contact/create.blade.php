@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row box m-5">
+    <div class="row box m-3">
         <div class="col-md-10 mx-auto m-3">
             <form action="{{ action("ContactController@create") }}" method="post" enctype="multipart/form-data">
                 @include('partials.errors.form_errors')
