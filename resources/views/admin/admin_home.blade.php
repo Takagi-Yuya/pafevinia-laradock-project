@@ -68,6 +68,24 @@
             <div class="col-md-8 mx-auto text-right">
                 <a href="{{ action('Admin\NewsController@add') }}" role='button' class='pr-5 pl-5 mt-3 btn btn-success'><i class="fas fa-pencil-alt"></i> Create New</a>
             </div>
+
+            <!-- category -->
+            <br><hr><hr><br>
+            <u class="h1"><i class="fas fa-layer-group"></i> -category- </u>
+                @foreach ($categories as $category)
+                    <div class="col-md-10 mx-auto box">
+                        <p class="text-center">● {{ $category->name }}</p>
+                        <hr>
+                        <div class="col-md-8 mx-auto text-right">
+                            <a href="{{ action('Admin\CategoryController@edit', ['id' => $category->id]) }}" role='button' class='btn btn-success'><i class="fas fa-wrench"></i> Edit</a>
+                            <a href="{{ action('Admin\CategoryController@delete', ['id' => $category->id]) }}" role='button' class='btn btn-danger'><i class="fas fa-ban"></i> Delete</a>
+                        </div>
+                    </div>
+                @endforeach
+            <br>
+            <div class="col-md-8 mx-auto text-right">
+                <a href="{{ action('Admin\CategoryController@add') }}" role='button' class='pr-5 pl-5 mt-3 btn btn-success'><i class="fas fa-plus"></i> Create New</a>
+            </div>
         </div>
     </div>
 
