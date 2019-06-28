@@ -13,4 +13,10 @@ class Category extends Model
     public static $rules = array(
         'name' => 'required'
     );
+
+    Public function articles()
+    {
+        return $this->hasMany('App\Article', 'category_id');
+    }
+
 }

@@ -28,6 +28,11 @@ class Article extends Model
         return $this->belongsTo('App\Profile', 'user_id');
     }
 
+    Public function category()
+    {
+        return $this->belongsTo('App\Category', 'category_id');
+    }
+
     //markdownのパース Articleモデルに自身のbodyをパースするためのparse()メソッドを追加
     public function parse()
     {
