@@ -54,4 +54,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('article/delete', 'Admin\ArticleController@delete');
     //contact
     Route::get('contact/show', 'ContactController@show');
+    //category
+    //Route::get('category/create', 'Admin\CategoryController@add');
+    //Route::post('category/create', 'Admin\CategoryController@create');
+    //Route::get('article/edit', 'Admin\ArticleController@edit');
+    //Route::post('article/edit', 'Admin\ArticleController@update');
+    //Route::get('category/delete', 'Admin\CategoryController@delete');
 });
