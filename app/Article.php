@@ -10,12 +10,12 @@ class Article extends Model
     protected $guarded = array('id');
 
     protected $fillable = [
-        'title', 'body', 'image_path', 'user_id'
+        'title', 'body', 'image_path', 'user_id', 'category_id'
     ];
 
     public static $rules = array(
-      'title' => 'required',
-      'body' => 'required'
+        'title' => 'required',
+        'body' => 'required'
     );
 
     Public function user()
@@ -30,7 +30,7 @@ class Article extends Model
 
     Public function category()
     {
-        return $this->belongsTo('App\Category', 'category_id');
+        return $this->belongsTo('App\Category');
     }
 
     //markdownのパース Articleモデルに自身のbodyをパースするためのparse()メソッドを追加

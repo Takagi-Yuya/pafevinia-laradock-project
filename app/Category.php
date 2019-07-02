@@ -6,15 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $primaryKey = 'category_id';
+    //primaryはtabelの主キー（自動的にidと名のつくものになる）
+    //guardedはブラックリスト（代入できない）
+    protected $guarded = array('id');
 
-    protected $fillable = 'name';
+    protected $fillable = [
+        'name'
+    ];
 
     public static $rules = array(
         'name' => 'required'
     );
 
-    Public function articles()
+    public function articles()
     {
         return $this->hasMany('App\Article', 'category_id');
     }

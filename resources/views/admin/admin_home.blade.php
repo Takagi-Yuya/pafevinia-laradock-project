@@ -53,7 +53,7 @@
                 @foreach ($news as $news_part)
                     <div class="col-md-10 mx-auto box">
                         <p><small><i class="far fa-clock"></i> {{ $news_part->created_at->format('Y/m/d/D') }}</small></p>
-                        <p class="text-center">{{ $news_part->content }}</p>
+                        <p class="h3 text-center">{{ $news_part->content }}</p>
                         <hr>
                         <div class="col-md-8 mx-auto text-right">
                             <a href="{{ action('Admin\NewsController@edit', ['id' => $news_part->id]) }}" role='button' class='btn btn-success'><i class="fas fa-wrench"></i> Edit</a>
@@ -71,10 +71,10 @@
 
             <!-- category -->
             <br><hr><hr><br>
-            <u class="h1"><i class="fas fa-layer-group"></i> -category- </u>
+            <u class="h1"><i class="fas fa-align-justify"></i> -category- </u>
                 @foreach ($categories as $category)
-                    <div class="col-md-10 mx-auto box">
-                        <p class="text-center">● {{ $category->name }}</p>
+                    <div class="col-md-10 mx-auto box pt-4">
+                        <p class="h3 text-center">{{ $category->name }}</p>
                         <hr>
                         <div class="col-md-8 mx-auto text-right">
                             <a href="{{ action('Admin\CategoryController@edit', ['id' => $category->id]) }}" role='button' class='btn btn-success'><i class="fas fa-wrench"></i> Edit</a>
