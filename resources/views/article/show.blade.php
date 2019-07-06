@@ -5,7 +5,7 @@
     <div class="row box p-3 mb-5">
         <div class="col-md-11 mx-auto">
             <p>
-                <a href="{{ action('Admin\ProfileController@show', ['id' => $article->user->id]) }}" class="badge badge-secondary">
+                <a href="{{ action('Admin\ProfileController@show', ['id' => $article->user->id]) }}" class="badge badge-light p-2">
                     @if ($article->user->profile != null && $article->user->profile->image_path != null)
                         <img src="{{ $article->user->profile->image_path }}" class="image-mini mx-auto">
                         {{ $article->user->profile->name }}
@@ -17,6 +17,9 @@
                         {{ $article->user->name }}
                     @endif
                 </a>
+                @if ($article->category_id != null)
+                    <a href="#" class="badge badge-secondary p-3"><i class="fas fa-bolt"></i> {{ $article->category->name }}</a>
+                @endif
             </p>
             <p><i class="far fa-clock"></i> {{ $article->created_at->format('Y/m/d/D') }}</p>
             <div class="image col-md-11 mx-auto">
