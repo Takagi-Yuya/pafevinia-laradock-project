@@ -36,6 +36,21 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-md-2" for="category">category：</label>
+                    <div class="col-md-10">
+                        <select name="category_id">
+                            @if ($article_form->category_id != null)
+                                <option value="{{ $article_form->category_id }}">{{ $article_form->category->name }}</option>
+                            @else
+                                <option value=""></option>
+                            @endif
+                            @foreach ($categories_form as $category_form)
+                                <option value="{{ $category_form->id }}">{{ $category_form->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <div class="col-md-10 text-right">
                         <input type="hidden" name="id" value="{{ $article_form->id }}">
                             @csrf

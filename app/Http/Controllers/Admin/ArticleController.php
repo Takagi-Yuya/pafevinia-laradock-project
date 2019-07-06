@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Article;
 use App\Profile;
 use App\User;
+use App\Category;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 
@@ -14,7 +15,9 @@ class ArticleController extends Controller
 {
     public function add()
     {
-        return view('admin.article.create');
+        $categories = Category::orderBy('created_at', 'desc')->get();
+
+        return view('admin.article.create', ['categories_form' => $categories]);
     }
 
     public function create(Request $request)
@@ -24,6 +27,10 @@ class ArticleController extends Controller
         $user = Auth::user();
         $articles->user_id = $user->id;
         $form = $request->all();
+
+        if (!isset($form['category_id'])) {
+            $articles->category_id = null;
+        } 
 
         if (isset($form['image'])) {
             $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
@@ -43,8 +50,9 @@ class ArticleController extends Controller
     public function edit(Request $request)
     {
         $article = Article::where('id', $request->id)->first();
+        $categories = Category::orderBy('created_at', 'desc')->get();
 
-        return view('admin.article.edit', ['article_form' => $article]);
+        return view('admin.article.edit', ['article_form' => $article, 'categories_form' => $categories]);
     }
 
     public function update(Request $request)

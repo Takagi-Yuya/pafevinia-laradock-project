@@ -9,7 +9,7 @@
             <form action="{{ action("Admin\ArticleController@create") }}" method="post" enctype="multipart/form-data">
                 @include('partials.errors.form_errors')
                 <div class="form-group row">
-                    <label class="col-md-2 ws-nr" for="body"><span class="badge badge-danger">Required</span> title：</label>
+                    <label class="col-md-2 ws-nr" for="title"><span class="badge badge-danger">Required</span> title：</label>
                     <div class="col-md-10">
                         <input class="form-control" type="text" name="title" value="{{ old("title") }}" placeholder="例）自分が前職を辞めて留学した理由">
                     </div>
@@ -24,6 +24,17 @@
                     <label class="col-md-2" for="image">image：</label>
                     <div class="col-md-10">
                         <input type="file" class="form-control-file" name="image">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2" for="category">category：</label>
+                    <div class="col-md-10">
+                        <select name="category_id">
+                                <option value=""></option>
+                            @foreach ($categories_form as $category_form)
+                                <option value="{{ $category_form->id }}">{{ $category_form->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">

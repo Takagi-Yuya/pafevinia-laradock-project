@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
+use App\Article;
 use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
@@ -50,6 +51,8 @@ class CategoryController extends Controller
 
     public function delete(Request $request)
     {
+        //カテゴリーの削除と同時に紐付く記事のcategory_idをnullに書き換える。
+        Article::where('category_id', $request->id)->update(['category_id' => null]);
         $category = Category::where('id', $request->id)->delete();
 
         return redirect('admin/admin_home');
