@@ -50,7 +50,7 @@
                 @foreach ($articles as $article)
                     <div class="col-md-3 col-sm-4 col-xs-6">
                         <div class="card m-1 card-height shadow-sm">
-                            <span class="badge badge-secondary">
+                            <span class="badge badge-light">
                                 @if ($article->user->profile != null && $article->user->profile->image_path != null)
                                     <img src="{{ $article->user->profile->image_path }}" class="image-mini mx-auto">
                                     {{ $article->user->profile->name }}
@@ -64,6 +64,10 @@
                             </span>
                             @if ($article->image_path != null)
                                 <img class="card-img-top" src="{{ $article->image_path }}" alt="Card image cap">
+                            @endif
+                            @if ($article->category_id != null)
+                                <!--aだと表示されない？-->
+                                <a href="#"><span class="badge badge-secondary p-2"><i class="fas fa-bolt"></i> {{ $article->category->name }}</span></a>
                             @endif
                             <div class="card-body">
                                 <p><i class="far fa-clock"></i> {{ $article->created_at->format('Y/m/d/D') }}</p>
