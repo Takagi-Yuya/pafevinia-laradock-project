@@ -30,7 +30,7 @@ class ArticleController extends Controller
 
         if (!isset($form['category_id'])) {
             $articles->category_id = null;
-        } 
+        }
 
         if (isset($form['image'])) {
             $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
@@ -91,7 +91,8 @@ class ArticleController extends Controller
     public function show(Request $request)
     {
         $article = Article::with(['user', 'profile'])->where('id', $request->id)->first();
+        $categories = Category::orderBy('created_at', 'desc')->get();
 
-        return view('article.show', ['article' => $article]);
+        return view('article.show', ['article' => $article, 'categories' => $categories]);
     }
 }

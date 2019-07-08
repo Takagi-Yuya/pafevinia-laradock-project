@@ -66,15 +66,14 @@
                                 <img class="card-img-top" src="{{ $article->image_path }}" alt="Card image cap">
                             @endif
                             @if ($article->category_id != null)
-                                <!--aだと表示されない？-->
-                                <a href="#"><span class="badge badge-secondary p-2"><i class="fas fa-bolt"></i> {{ $article->category->name }}</span></a>
+                                <a href="#"><span class="badge badge-secondary slowly p-2"><i class="fas fa-bolt"></i> {{ $article->category->name }}</span></a>
                             @endif
                             <div class="card-body">
                                 <p><i class="far fa-clock"></i> {{ $article->created_at->format('Y/m/d/D') }}</p>
                                 <h4 class="card-title">{{ $article->title }}</h4>
                                 <hr size="3" color="gray">
                                 <div class="p-4 text-right">
-                                    <a href="{{ action('Admin\ArticleController@show', ['id' => $article->id]) }}" class="btn btn-primary"><i class="fas fa-plane"></i> read more</a>
+                                    <a href="{{ action('Admin\ArticleController@show', ['id' => $article->id]) }}" class="btn btn-primary slowly"><i class="fas fa-plane"></i> read more</a>
                                 </div>
                             </div>
                         </div>

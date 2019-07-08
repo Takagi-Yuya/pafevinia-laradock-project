@@ -116,13 +116,13 @@
             <a href="{{ url('/admin/admin_home') }}"><i class="fas fa-home"></i> AdminHome</a>
         </div>
     </div>
-    <div id="app">
+    <div>
         <main class="py-4 mt-3">
             @yield('content')
         </main>
     </div>
 </body>
 <footer>
-    @include('partials.navbar.form_navbar')
+    @include('partials.footer.form_navbar')
 </footer>
 </html>

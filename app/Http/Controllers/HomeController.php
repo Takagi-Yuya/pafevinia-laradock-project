@@ -8,6 +8,7 @@ use App\Profile;
 use App\User;
 use App\News;
 use App\Article;
+use App\Category;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 
@@ -34,9 +35,10 @@ class HomeController extends Controller
         $users = User::all();
         $profiles = Profile::all();
         $news = News::orderBy('created_at', 'desc')->paginate(6, ["*"], 'news-pn')->appends(["articles-pn"=>$request->input('articles-pn')]);
+        $categories = Category::orderBy('created_at', 'desc')->get();
         $articles = Article::orderBy('created_at', 'desc')->paginate(12, ["*"], 'articles-pn')->appends(["news-pn"=>$request->input('news-pn')]);
         $keyword = null;
 
-        return view('home', ['profiles' => $profiles, 'users' => $users, 'news' => $news, 'articles' => $articles, 'keyword' => $keyword]);
+        return view('home', ['profiles' => $profiles, 'users' => $users, 'news' => $news, 'categories' => $categories, 'articles' => $articles, 'keyword' => $keyword]);
     }
 }

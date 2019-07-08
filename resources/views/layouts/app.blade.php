@@ -279,7 +279,35 @@
         }
         #sbtn:hover{
             color:#7fbfff;
-          }
+        }
+        /*footer subbar*/
+        #foot-sub {
+            background-color: #E5E5E5;
+            padding: 1em 1em;
+        }
+
+        #foot-sub a {
+            position: relative;
+            display: inline-block;
+            transition: .3s;
+            color: black;
+            text-decoration: none;
+        }
+
+        #foot-sub a::after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: gray;
+            transition: .3s;
+            transform: translateX(-50%);
+        }
+
+        #foot-sub a:hover::after {
+            width: 100%;
         }
     </style>
 
@@ -294,11 +322,11 @@
             </div>
         </div>
         @include('partials.button.form_homebutton')
-        <hr><hr>
+        <hr>
     </div>
 </header>
 <body>
-    <div id="app">
+    <div>
         <main class="py-4">
             @yield('content')
         </main>
@@ -306,6 +334,11 @@
 </body>
 <footer>
     @include('partials.button.form_homebutton')
-    @include('partials.navbar.form_navbar')
+    <div id="foot-sub">
+        <div class="container">
+            @include('partials.footer.form_category')
+        </div>
+    </div>
+    @include('partials.footer.form_navbar')
 </footer>
 </html>

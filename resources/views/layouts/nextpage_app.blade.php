@@ -61,27 +61,27 @@
             height: 95%;
         }
         .image-mini {
-          width: 32px;
-          height: 32px;
-          -o-object-fit: cover;
-             object-fit: cover;
-          border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            -o-object-fit: cover;
+            object-fit: cover;
+            border-radius: 50%;
         }
         .image-profile {
-          -o-object-fit: cover;
-             object-fit: cover;
-          border-radius: 50%;
-          height: auto;
-          max-width: 100%;
-          display: block;
-          text-align: center;
+            -o-object-fit: cover;
+            object-fit: cover;
+            border-radius: 50%;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            text-align: center;
         }
         .image-article {
-          object-fit: cover;
-          height: auto;
-          max-width: 100%;
-          display: block;
-          text-align:center;
+            object-fit: cover;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            text-align:center;
         }
         .box {
             padding: 0.5em 1em;
@@ -100,6 +100,17 @@
         /*改行無し*/
         .ws-nr {
             white-space: nowrap;
+        }
+
+        .slowly {
+            display: inline-block;
+            transition: .5s;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        .slowly:hover {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
         }
 
         /*~~~SNSボタン wide~~~*/
@@ -180,6 +191,35 @@
             flex:0 0 48%;
             text-align:center !important;
         }
+        /*footer subbar*/
+        #foot-sub {
+            background-color: #E5E5E5;
+            padding: 1em 1em;
+        }
+
+        #foot-sub a {
+            position: relative;
+            display: inline-block;
+            transition: .3s;
+            color: black;
+            text-decoration: none;
+        }
+
+        #foot-sub a::after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: gray;
+            transition: .3s;
+            transform: translateX(-50%);
+        }
+
+        #foot-sub a:hover::after {
+            width: 100%;
+        }
     </style>
 
 </head>
@@ -193,11 +233,11 @@
             </div>
         </div>
         @include('partials.button.form_homebutton')
-        <hr><hr>
+        <hr>
     </div>
 </header>
 <body>
-    <div id="app">
+    <div>
         <main class="py-4">
             @yield('content')
         </main>
@@ -205,6 +245,11 @@
 </body>
 <footer>
     @include('partials.button.form_homebutton')
-    @include('partials.navbar.form_navbar')
+    <div id="foot-sub">
+        <div class="container">
+            @include('partials.footer.form_category')
+        </div>
+    </div>
+    @include('partials.footer.form_navbar')
 </footer>
 </html>
