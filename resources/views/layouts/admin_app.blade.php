@@ -98,6 +98,11 @@
         .card-height {
             height: 95%;
         }
+        /*リンクカラー*/
+        .user-link:link {
+            color: #404040;
+            text-decoration: none;
+        }
     </style>
 
 </head>

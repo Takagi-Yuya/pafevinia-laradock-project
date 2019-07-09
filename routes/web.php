@@ -29,6 +29,8 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 //記事の個別ページ
 Route::get('article/show', 'Admin\ArticleController@show');
+//カテゴリー毎のページ(homeがテンプレ)
+Route::get('category/list', 'Admin\CategoryController@index');
 //personal
 Route::get('personal/show', 'Admin\ProfileController@show');
 //検索機能関係

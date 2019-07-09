@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Profile;
 use App\User;
 use App\News;
+use App\Category;
 use App\Article;
 use Illuminate\Support\Facades\Auth;
 use Storage;
@@ -14,12 +15,12 @@ use Storage;
 class SearchController extends Controller
 {
     //like演算子で曖昧検索
-    //Articleモデルのtitleとbodyカラム(orWhere関数でok?)、リレーションからuserとprofileのnameで検索（titleとbodyでカラムが別れているけどどうする？）
     public function search(Request $request)
     {
         $users = User::all();
         $profiles = Profile::all();
         $news = News::orderBy('created_at', 'desc')->paginate(6, ["*"], 'news-pn');
+        $categories = Category::orderBy('created_at', 'desc')->get();
         $keyword = $request->input('keyword');
 
         if (!empty($keyword)) {
@@ -40,6 +41,6 @@ class SearchController extends Controller
             $articles = Article::orderBy('created_at', 'desc')->paginate(12, ["*"], 'articles-pn');
         }
 
-        return view('home', ['profiles' => $profiles, 'users' => $users, 'news' => $news, 'articles' => $articles, 'keyword' => $keyword]);
+        return view('home', ['profiles' => $profiles, 'users' => $users, 'news' => $news, 'categories' => $categories, 'articles' => $articles, 'keyword' => $keyword]);
     }
 }

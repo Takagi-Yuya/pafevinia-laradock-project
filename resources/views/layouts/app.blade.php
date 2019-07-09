@@ -165,8 +165,12 @@
             -webkit-transform: scale(1.1);
             transform: scale(1.1);
         }
-        .user-link:link {
+        .user-link {
             color: #404040;
+        }
+        .user-link:hover {
+            color: gray;
+            text-decoration: none;
         }
 
         /*~~~SNSボタン wide~~~*/
@@ -285,7 +289,6 @@
             background-color: #E5E5E5;
             padding: 1em 1em;
         }
-
         #foot-sub a {
             position: relative;
             display: inline-block;
@@ -293,7 +296,6 @@
             color: black;
             text-decoration: none;
         }
-
         #foot-sub a::after {
             position: absolute;
             bottom: 0;
@@ -305,7 +307,6 @@
             transition: .3s;
             transform: translateX(-50%);
         }
-
         #foot-sub a:hover::after {
             width: 100%;
         }

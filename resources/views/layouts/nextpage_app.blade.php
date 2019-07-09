@@ -67,6 +67,13 @@
             object-fit: cover;
             border-radius: 50%;
         }
+        .image-middle {
+            width: 60px;
+            height: 60px;
+            -o-object-fit: cover;
+               object-fit: cover;
+            border-radius: 50%;
+        }
         .image-profile {
             -o-object-fit: cover;
             object-fit: cover;
@@ -91,17 +98,67 @@
             border-top: solid 2px #1E575A;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
         }
+
         /*カードの右下配置*/
         .card-body a {
             position: absolute;
             right: 10px;
             bottom: 10px;
         }
+
         /*改行無し*/
         .ws-nr {
             white-space: nowrap;
         }
 
+        /*about backgroundimage 用*/
+        #about_img {
+            background-image: url('../images/cool.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #about_img::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: -1px;
+            right: -1px;
+            background: inherit;
+            filter: blur(4px);
+            z-index: -1;
+        }
+        #news_img {
+            background-image: url('../images/kopen.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #news_img::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: -1px;
+            right: -1px;
+            background: inherit;
+            filter: blur(3px);
+            z-index: -1;
+        }
+        .font-about {
+            color: #404040;
+            font-size: 15px;
+            text-shadow: 0px 0px 0.8px #000,2px 2px 2px #FFF;
+        }
+
+        /*ふわっと拡大*/
         .slowly {
             display: inline-block;
             transition: .5s;
@@ -111,6 +168,14 @@
         .slowly:hover {
             -webkit-transform: scale(1.1);
             transform: scale(1.1);
+        }
+        /*リンクカラー*/
+        .user-link {
+            color: #404040;
+        }
+        .user-link:hover {
+            color: gray;
+            text-decoration: none;
         }
 
         /*~~~SNSボタン wide~~~*/
@@ -191,6 +256,41 @@
             flex:0 0 48%;
             text-align:center !important;
         }
+
+        /* ~~~検索フォーム~~~ */
+        #form1{
+            position: relative;
+            max-width: 500px;
+            margin-bottom: 60px;
+        }
+        #sbox1{
+            border: 1px #C9C9C9 solid;
+            height: 50px;
+            padding-left: 15px;
+            padding-right: 45px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            outline: 0;
+            background: #eee;
+            border-radius:25px;
+        }
+        #sbtn1{
+            border: none;
+            height: 50px;
+            position: absolute;
+            left: 175px;
+            top: 0;
+            background: none;
+            color: #666;
+            border: none;
+            font-size: 20px;
+            outline: 0;
+        }
+        #sbtn:hover{
+            color:#7fbfff;
+        }
+
         /*footer subbar*/
         #foot-sub {
             background-color: #E5E5E5;
@@ -204,7 +304,6 @@
             color: black;
             text-decoration: none;
         }
-
         #foot-sub a::after {
             position: absolute;
             bottom: 0;
@@ -216,7 +315,6 @@
             transition: .3s;
             transform: translateX(-50%);
         }
-
         #foot-sub a:hover::after {
             width: 100%;
         }

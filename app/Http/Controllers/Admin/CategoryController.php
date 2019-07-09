@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Category;
+use App\Profile;
+use App\User;
+use App\News;
 use App\Article;
+use App\Category;
 use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
@@ -57,4 +60,21 @@ class CategoryController extends Controller
 
         return redirect('admin/admin_home');
     }
+    //homeから各category pageへ
+    public function index(Request $request)
+    {
+        $users = User::all();
+        $profiles = Profile::all();
+        $news = News::orderBy('created_at', 'desc')->paginate(6, ["*"], 'news-pn')->appends(["articles-pn"=>$request->input('articles-pn')]);
+        $categories = Category::orderBy('created_at', 'desc')->get();
+        if ($request->id == null) {
+            $articles = Article::where('category_id', null)->orderBy('created_at', 'desc')->paginate(12, ["*"], 'articles-pn')->appends(["news-pn"=>$request->input('news-pn')]);
+        } else {
+            $articles = Article::where('category_id', $request->id)->orderBy('created_at', 'desc')->paginate(12, ["*"], 'articles-pn')->appends(["news-pn"=>$request->input('news-pn')]);
+        }
+        $keyword = null;
+
+        return view('category.list', ['profiles' => $profiles, 'users' => $users, 'news' => $news, 'categories' => $categories, 'articles' => $articles, 'keyword' => $keyword]);
+    }
+
 }
