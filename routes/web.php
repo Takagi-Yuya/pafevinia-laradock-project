@@ -39,7 +39,8 @@ Route::get('search', 'SearchController@search');
 Route::get('contact/create', 'ContactController@add');
 Route::post('contact/create', 'ContactController@create');
 
-
+//ここからは認証必須
+//↓↓
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     //admin_home
     Route::get('admin_home', 'Admin\AdminController@list_of_function');

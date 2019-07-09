@@ -99,8 +99,11 @@
             height: 95%;
         }
         /*リンクカラー*/
-        .user-link:link {
+        .user-link {
             color: #404040;
+        }
+        .user-link:hover {
+            color: gray;
             text-decoration: none;
         }
     </style>
@@ -116,9 +119,9 @@
             </div>
         </div>
         <div align="center">
-            <a href="{{ url('/') }}"><i class="fas fa-home"></i> GuestHome</a>
+            <a href="{{ url('/') }}" class="user-link"><i class="fas fa-home"></i> GuestHome</a>
             <br>
-            <a href="{{ url('/admin/admin_home') }}"><i class="fas fa-home"></i> AdminHome</a>
+            <a href="{{ url('/admin/admin_home') }}" class="user-link"><i class="fas fa-home"></i> AdminHome</a>
         </div>
     </div>
     <div>

@@ -334,12 +334,16 @@
     </div>
 </body>
 <footer>
-    @include('partials.button.form_homebutton')
-    <div id="foot-sub">
-        <div class="container">
+    <!--login画面ではcategoryfooter、homebuttonを表示しない-->
+    {{$url = htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8')}}
+    @if (strpos($url, 'login') === false)
+        @include('partials.button.form_homebutton')
+        <div id="foot-sub">
+            <div class="container">
             @include('partials.footer.form_category')
+            </div>
         </div>
-    </div>
+    @endif
     @include('partials.footer.form_navbar')
 </footer>
 </html>
