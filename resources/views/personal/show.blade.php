@@ -66,7 +66,7 @@
                                 <img class="card-img-top" src="{{ $article->image_path }}" alt="Card image cap">
                             @endif
                             @if ($article->category_id != null)
-                                <a href="#"><span class="badge badge-secondary slowly p-2"><i class="fas fa-bolt"></i> {{ $article->category->name }}</span></a>
+                                <a href="{{ action('Admin\CategoryController@index', ['id' => $article->category_id]) }}"><span class="badge badge-secondary slowly p-2"><i class="fas fa-bolt"></i> {{ $article->category->name }}</span></a>
                             @endif
                             <div class="card-body">
                                 <p><i class="far fa-clock"></i> {{ $article->created_at->format('Y/m/d/D') }}</p>

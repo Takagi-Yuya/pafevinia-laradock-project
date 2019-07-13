@@ -18,7 +18,7 @@
                     @endif
                 </a>
                 @if ($article->category_id != null)
-                    <a href="#" class="badge badge-secondary slowly p-3"><i class="fas fa-bolt"></i> {{ $article->category->name }}</a>
+                    <a href="{{ action('Admin\CategoryController@index', ['id' => $article->category_id]) }}" class="badge badge-secondary slowly p-3"><i class="fas fa-bolt"></i> {{ $article->category->name }}</a>
                 @endif
             </p>
             <p><i class="far fa-clock"></i> {{ $article->created_at->format('Y/m/d/D') }}</p>
