@@ -37,6 +37,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!--favicon-->
+    <link rel="shortcut icon" href="../images/pafevinia.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../images/pafevinia_sp.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="../images/pafevinia_sp.png" sizes="192x192">
+
     <style>
         #toppage {
             background-image: url('../images/wakuwaku.jpg');
