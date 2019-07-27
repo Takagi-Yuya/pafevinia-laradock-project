@@ -46,6 +46,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!--favicon-->
     <link rel="shortcut icon" href="../images/pafevinia.ico" type="image/x-icon">
@@ -58,58 +59,6 @@
             color: #1E575A;
             text-shadow: 5px 5px 5px #808080;
             margin: 20px;
-        }
-        .image-mini {
-          width: 32px;
-          height: 32px;
-          -o-object-fit: cover;
-             object-fit: cover;
-          border-radius: 50%;
-        }
-        .image-profile {
-          -o-object-fit: cover;
-             object-fit: cover;
-          border-radius: 50%;
-          height: auto;
-          max-width: 100%;
-          display: block;
-          text-align: center;
-        }
-        .image-article {
-          object-fit: cover;
-          height: auto;
-          max-width: 100%;
-          display: block;
-          text-align:center;
-        }
-        .box {
-            padding: 0.5em 1em;
-            margin: 2em 0;
-            color: #5d627b;
-            background: white;
-            border-top: solid 2px #1E575A;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-        }
-        /*カードの右下配置*/
-        .card-body a {
-            position: absolute;
-            right: 10px;
-            bottom: 10px;
-        }
-        /*改行無し*/
-        .ws-nr {
-            white-space: nowrap;
-        }
-        .card-height {
-            height: 95%;
-        }
-        /*リンクカラー*/
-        .user-link {
-            color: #404040;
-        }
-        .user-link:hover {
-            color: gray;
-            text-decoration: none;
         }
     </style>
 
