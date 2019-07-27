@@ -348,7 +348,7 @@
                 background: rgba(255,255,255,0.65);
             }
             ul {
-                margin-bottom: 0.5rem;
+                margin-bottom: 0rem;
             }
         }
     </style>
