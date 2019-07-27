@@ -53,7 +53,7 @@
             width: 50%;
             height: 450px;
             max-width: 650px; /* 最大幅 */
-            min-width: 400px; /* 最小幅 */
+            min-width: 360px; /* 最小幅 */
             filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
         }
         .title {
@@ -246,21 +246,6 @@
             left:8px;
             bottom:2px;
         }
-        /* ulタグの内側余白を０にする */
-        ul.snsbtniti2{
-            padding:0!important;
-            list-style: none;
-        }
-        /* ボタン全体の位置 */
-        .snsbtniti2{
-            display:flex;
-            flex-flow:row wrap;
-        }
-        /* ボタン同士の余白 */
-        .snsbtniti2 li{
-            flex:0 0 48%;
-            text-align:center !important;
-        }
 
         /* ~~~検索フォーム~~~ */
         #form1{
@@ -322,6 +307,49 @@
         }
         #foot-sub a:hover::after {
             width: 100%;
+        }
+        @@media screen and (min-width: 480px){
+            .sp{ display: none; }
+            /* ulタグの内側余白を０にする */
+            ul.snsbtniti2{
+                padding:0!important;
+                list-style: none;
+            }
+            /* ボタン全体の位置 */
+            .snsbtniti2{
+                display:flex;
+                flex-flow:row wrap;
+            }
+            /* ボタン同士の余白 */
+            .snsbtniti2 li{
+                flex:0 0 48%;
+                text-align:center !important;
+            }
+        }
+        @@media screen and (max-width: 480px){
+            .pc{ display: none; }
+            .sp{ display: block; }
+            .snsbtniti2 {
+                width: 100%;
+                height: 55px;
+                background-color: rgba(0,0,0,0.50);
+                padding: 10px;
+                bottom: 0;
+                overflow: hidden;
+                position: fixed;
+                z-index: 100000;
+            }
+            .snsbtniti2 li {
+                width: 48%;
+                text-align: center;
+                display: inline-block;
+            }
+            .flowbtn12 {
+                background: rgba(255,255,255,0.65);
+            }
+            ul {
+                margin-bottom: 0.5rem;
+            }
         }
     </style>
 

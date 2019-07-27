@@ -53,7 +53,7 @@
             width: 50%;
             height: 450px;
             max-width: 650px; /* 最大幅 */
-            min-width: 400px; /* 最小幅 */
+            min-width: 360px; /* 最小幅 */
             filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
         }
         .title {
@@ -93,7 +93,7 @@
             height: auto;
             width: auto;
             display: block;
-            text-align:center;
+            text-align: center;
         }
         .box {
             padding: 0.5em 1em;

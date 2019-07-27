@@ -1,6 +1,7 @@
 @extends('layouts.nextpage_app')
 
 @section('content')
+@include ('partials.button.form_share_button')
 <div class="container">
     <div class="row box p-3 mb-5">
         <div class="col-md-11 mx-auto">
@@ -33,7 +34,7 @@
             <p>{!! $article->markdown_body !!}</p> <!-- HTMLをそのまま表示するため、エスケープをしないリテラルに変更 -->
             <hr size="5" color="gray">
             <br>
-            <ul class="snsbtniti2 mt-5 mb-5">
+            <ul class="snsbtniti2 mt-5 mb-5 pc">
                 <li>
                     <a href="https://twitter.com/intent/tweet?url={{ request()->fullUrl() }}" class="flowbtn12 fl_tw2"><i class="fab fa-twitter"></i><span>Twitterでシェア</span></a>
                 </li>
