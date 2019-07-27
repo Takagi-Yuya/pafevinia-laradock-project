@@ -18,7 +18,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pafevinia.com/">
     <meta property="og:image" content="https://pafevinia.s3-ap-northeast-1.amazonaws.com/538vVdbSd4qjolATWp81z9lEJgRTWJrfsv0mJk9K.jpeg">
-    <meta property="og:description" content="pafeviniaの新しい記事が作成されました。">
+    <meta property="og:description" content="pafeviniaに関する新しい情報です！">
     <meta name="twitter:card" content="summary">
 
     <!-- CSRF Token -->
@@ -54,21 +54,21 @@
     <link rel="icon" type="image/png" href="../images/pafevinia_sp.png" sizes="192x192">
 
     <style>
-        .title {
-            font-size: 50px;
-            color: #1E575A;
-            text-shadow: 5px 5px 5px #808080;
-            margin: 20px;
-        }
-    </style>
+      .title {
+        font-size: 50px;
+        color: #1E575A;
+        text-shadow: 5px 5px 5px #808080;
+        margin: 20px;
+      }
+  </style>
 
 </head>
-<body>
+<header>
     <div class="bg-white shadow-sm">
         <div id="toppage">
             <div class="row text-center">
                 <div class="col-md-12">
-                    <h1 class="title">pafevinia🦒(admin)</h1>
+                    <h1 class="title ws-nr">pafevinia🦒(admin)</h1>
                 </div>
             </div>
         </div>
@@ -78,8 +78,11 @@
             <a href="{{ url('/admin/admin_home') }}" class="user-link"><i class="fas fa-home"></i> AdminHome</a>
         </div>
     </div>
+</header>
+<body>
     <div>
         <main class="py-4 mt-3">
+            @include ('partials.button.form_pagetop_button')
             @yield('content')
         </main>
     </div>

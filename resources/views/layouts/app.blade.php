@@ -18,7 +18,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pafevinia.com/">
     <meta property="og:image" content="https://pafevinia.s3-ap-northeast-1.amazonaws.com/538vVdbSd4qjolATWp81z9lEJgRTWJrfsv0mJk9K.jpeg">
-    <meta property="og:description" content="pafeviniaの新しい記事が作成されました。">
+    <meta property="og:description" content="pafeviniaに関する新しい情報です！">
     <meta name="twitter:card" content="summary">
 
     <!-- CSRF Token -->
@@ -44,19 +44,19 @@
     <link rel="icon" type="image/png" href="/images/pafevinia_sp.png" sizes="192x192">
 
     <style>
-        #toppage {
-            background-image: url('images/wakuwaku.jpg');
-            position: relative;
-            z-index: 0;
-            margin: 15px auto;
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 50%;
-            height: 450px;
-            max-width: 650px; /* 最大幅 */
-            min-width: 360px; /* 最小幅 */
-            filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
-        }
+      #toppage {
+        background-image: url('images/wakuwaku.jpg');
+        position: relative;
+        z-index: 0;
+        margin: 15px auto;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 50%;
+        height: 450px;
+        max-width: 650px; /* 最大幅 */
+        min-width: 350px; /* 最小幅 */
+        filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
+      }
     </style>
 
 </head>
@@ -65,7 +65,7 @@
         <div id="toppage">
             <div class="row text-center">
                 <div class="col-md-12">
-                    <h1 class="title">pafevinia🦒</h1>
+                    <h1 class="title ws-nr">pafevinia🦒</h1>
                 </div>
             </div>
         </div>
@@ -76,6 +76,7 @@
 <body>
     <div>
         <main class="py-4">
+            @include ('partials.button.form_pagetop_button')
             @yield('content')
         </main>
     </div>
