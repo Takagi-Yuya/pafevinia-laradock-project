@@ -12,6 +12,7 @@
                     @foreach ($news as $news_part)
                         <div class="col-md-12 mx-auto">
                             <p>
+                                @include('partials.tag.form_newtag', ['part' => $news_part])
                                 <small><i class="fas fa-bullhorn"></i> {{ $news_part->created_at->format('Y/m/d/D') }} ーー </small>
                                 @if ($news_part->user->profile != null && $news_part->user->profile->image_path != null)
                                     <img src="{{ $news_part->user->profile->image_path }}" class="image-mini mx-auto">
