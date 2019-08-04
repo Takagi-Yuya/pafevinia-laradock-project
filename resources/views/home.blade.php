@@ -13,7 +13,7 @@
                         <div class="col-md-12 mx-auto">
                             <p>
                                 @include('partials.tag.form_newtag', ['part' => $news_part])
-                                <small><i class="fas fa-bullhorn"></i> {{ $news_part->created_at->format('Y/m/d/D') }} ーー </small>
+                                <small><i class="fas fa-bullhorn"></i> {{ $news_part->created_at->format('Y/m/d') }} ー </small>
                                 @if ($news_part->user->profile != null && $news_part->user->profile->image_path != null)
                                     <img src="{{ $news_part->user->profile->image_path }}" class="image-mini mx-auto">
                                 @elseif ($news_part->user->profile != null && $news_part->user->profile->image_path == null)
@@ -57,6 +57,7 @@
                     <div class="col-md-4 col-sm-6 col-xs-6">
                         <div class="card m-1 card-height shadow-sm">
                             <a href="{{ action('Admin\ProfileController@show', ['id' => $article->user->id]) }}" class="badge badge-light slowly">
+                              @include('partials.tag.form_newtag', ['part' => $article])
                               @if ($article->user->profile != null && $article->user->profile->image_path != null)
                                   <img src="{{ $article->user->profile->image_path }}" class="image-mini mx-auto">
                                   {{ $article->user->profile->name }}

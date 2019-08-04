@@ -8,5 +8,5 @@ if ($days < $limit) {
 };
 ?>
 @if($tag != null)
-<span class="badge badge-warning">{{$tag}}</span>
+<span class="border badge badge-warning">{{$tag}}</span>
 @endif
