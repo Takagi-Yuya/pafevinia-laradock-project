@@ -58,6 +58,9 @@
         min-width: 350px; /* 最小幅 */
         filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
       }
+      h3 {
+        font-size: 1.4rem;
+      }
     </style>
 
 </head>

@@ -60,6 +60,9 @@
         text-shadow: 5px 5px 5px #808080;
         margin: 20px;
       }
+      h3 {
+        font-size: 1.4rem;
+      }
   </style>
 
 </head>
